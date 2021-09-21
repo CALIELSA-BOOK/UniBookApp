@@ -1,0 +1,579 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09D572B726FA203C00583899 /* UniBookAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D572B626FA203C00583899 /* UniBookAppApp.swift */; };
+		09D572B926FA203C00583899 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D572B826FA203C00583899 /* ContentView.swift */; };
+		09D572BB26FA204200583899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D572BA26FA204200583899 /* Assets.xcassets */; };
+		09D572BE26FA204200583899 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D572BD26FA204200583899 /* Preview Assets.xcassets */; };
+		09D572C926FA204200583899 /* UniBookAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D572C826FA204200583899 /* UniBookAppTests.swift */; };
+		09D572D426FA204200583899 /* UniBookAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D572D326FA204200583899 /* UniBookAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		09D572C526FA204200583899 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09D572AB26FA203C00583899 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 09D572B226FA203C00583899;
+			remoteInfo = UniBookApp;
+		};
+		09D572D026FA204200583899 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09D572AB26FA203C00583899 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 09D572B226FA203C00583899;
+			remoteInfo = UniBookApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		09D572B326FA203C00583899 /* UniBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		09D572B626FA203C00583899 /* UniBookAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniBookAppApp.swift; sourceTree = "<group>"; };
+		09D572B826FA203C00583899 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		09D572BA26FA204200583899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		09D572BD26FA204200583899 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		09D572BF26FA204200583899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09D572C426FA204200583899 /* UniBookAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniBookAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		09D572C826FA204200583899 /* UniBookAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniBookAppTests.swift; sourceTree = "<group>"; };
+		09D572CA26FA204200583899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09D572CF26FA204200583899 /* UniBookAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniBookAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		09D572D326FA204200583899 /* UniBookAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniBookAppUITests.swift; sourceTree = "<group>"; };
+		09D572D526FA204200583899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		09D572B026FA203C00583899 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09D572C126FA204200583899 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09D572CC26FA204200583899 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09D572AA26FA203C00583899 = {
+			isa = PBXGroup;
+			children = (
+				09D572B526FA203C00583899 /* UniBookApp */,
+				09D572C726FA204200583899 /* UniBookAppTests */,
+				09D572D226FA204200583899 /* UniBookAppUITests */,
+				09D572B426FA203C00583899 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		09D572B426FA203C00583899 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				09D572B326FA203C00583899 /* UniBookApp.app */,
+				09D572C426FA204200583899 /* UniBookAppTests.xctest */,
+				09D572CF26FA204200583899 /* UniBookAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		09D572B526FA203C00583899 /* UniBookApp */ = {
+			isa = PBXGroup;
+			children = (
+				09D572B626FA203C00583899 /* UniBookAppApp.swift */,
+				09D572B826FA203C00583899 /* ContentView.swift */,
+				09D572BA26FA204200583899 /* Assets.xcassets */,
+				09D572BF26FA204200583899 /* Info.plist */,
+				09D572BC26FA204200583899 /* Preview Content */,
+			);
+			path = UniBookApp;
+			sourceTree = "<group>";
+		};
+		09D572BC26FA204200583899 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				09D572BD26FA204200583899 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		09D572C726FA204200583899 /* UniBookAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				09D572C826FA204200583899 /* UniBookAppTests.swift */,
+				09D572CA26FA204200583899 /* Info.plist */,
+			);
+			path = UniBookAppTests;
+			sourceTree = "<group>";
+		};
+		09D572D226FA204200583899 /* UniBookAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				09D572D326FA204200583899 /* UniBookAppUITests.swift */,
+				09D572D526FA204200583899 /* Info.plist */,
+			);
+			path = UniBookAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		09D572B226FA203C00583899 /* UniBookApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09D572D826FA204200583899 /* Build configuration list for PBXNativeTarget "UniBookApp" */;
+			buildPhases = (
+				09D572AF26FA203C00583899 /* Sources */,
+				09D572B026FA203C00583899 /* Frameworks */,
+				09D572B126FA203C00583899 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UniBookApp;
+			productName = UniBookApp;
+			productReference = 09D572B326FA203C00583899 /* UniBookApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		09D572C326FA204200583899 /* UniBookAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09D572DB26FA204200583899 /* Build configuration list for PBXNativeTarget "UniBookAppTests" */;
+			buildPhases = (
+				09D572C026FA204200583899 /* Sources */,
+				09D572C126FA204200583899 /* Frameworks */,
+				09D572C226FA204200583899 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				09D572C626FA204200583899 /* PBXTargetDependency */,
+			);
+			name = UniBookAppTests;
+			productName = UniBookAppTests;
+			productReference = 09D572C426FA204200583899 /* UniBookAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		09D572CE26FA204200583899 /* UniBookAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09D572DE26FA204200583899 /* Build configuration list for PBXNativeTarget "UniBookAppUITests" */;
+			buildPhases = (
+				09D572CB26FA204200583899 /* Sources */,
+				09D572CC26FA204200583899 /* Frameworks */,
+				09D572CD26FA204200583899 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				09D572D126FA204200583899 /* PBXTargetDependency */,
+			);
+			name = UniBookAppUITests;
+			productName = UniBookAppUITests;
+			productReference = 09D572CF26FA204200583899 /* UniBookAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		09D572AB26FA203C00583899 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					09D572B226FA203C00583899 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					09D572C326FA204200583899 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 09D572B226FA203C00583899;
+					};
+					09D572CE26FA204200583899 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 09D572B226FA203C00583899;
+					};
+				};
+			};
+			buildConfigurationList = 09D572AE26FA203C00583899 /* Build configuration list for PBXProject "UniBookApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 09D572AA26FA203C00583899;
+			productRefGroup = 09D572B426FA203C00583899 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				09D572B226FA203C00583899 /* UniBookApp */,
+				09D572C326FA204200583899 /* UniBookAppTests */,
+				09D572CE26FA204200583899 /* UniBookAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		09D572B126FA203C00583899 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09D572BE26FA204200583899 /* Preview Assets.xcassets in Resources */,
+				09D572BB26FA204200583899 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09D572C226FA204200583899 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09D572CD26FA204200583899 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		09D572AF26FA203C00583899 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09D572B926FA203C00583899 /* ContentView.swift in Sources */,
+				09D572B726FA203C00583899 /* UniBookAppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09D572C026FA204200583899 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09D572C926FA204200583899 /* UniBookAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09D572CB26FA204200583899 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09D572D426FA204200583899 /* UniBookAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		09D572C626FA204200583899 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 09D572B226FA203C00583899 /* UniBookApp */;
+			targetProxy = 09D572C526FA204200583899 /* PBXContainerItemProxy */;
+		};
+		09D572D126FA204200583899 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 09D572B226FA203C00583899 /* UniBookApp */;
+			targetProxy = 09D572D026FA204200583899 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		09D572D626FA204200583899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		09D572D726FA204200583899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		09D572D926FA204200583899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"UniBookApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = UniBookApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "CALIELSA-BOOK.UniBookApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		09D572DA26FA204200583899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"UniBookApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = UniBookApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "CALIELSA-BOOK.UniBookApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		09D572DC26FA204200583899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UniBookAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "CALIELSA-BOOK.UniBookAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UniBookApp.app/UniBookApp";
+			};
+			name = Debug;
+		};
+		09D572DD26FA204200583899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UniBookAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "CALIELSA-BOOK.UniBookAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UniBookApp.app/UniBookApp";
+			};
+			name = Release;
+		};
+		09D572DF26FA204200583899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UniBookAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "CALIELSA-BOOK.UniBookAppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UniBookApp;
+			};
+			name = Debug;
+		};
+		09D572E026FA204200583899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UniBookAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "CALIELSA-BOOK.UniBookAppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UniBookApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		09D572AE26FA203C00583899 /* Build configuration list for PBXProject "UniBookApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09D572D626FA204200583899 /* Debug */,
+				09D572D726FA204200583899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		09D572D826FA204200583899 /* Build configuration list for PBXNativeTarget "UniBookApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09D572D926FA204200583899 /* Debug */,
+				09D572DA26FA204200583899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		09D572DB26FA204200583899 /* Build configuration list for PBXNativeTarget "UniBookAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09D572DC26FA204200583899 /* Debug */,
+				09D572DD26FA204200583899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		09D572DE26FA204200583899 /* Build configuration list for PBXNativeTarget "UniBookAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09D572DF26FA204200583899 /* Debug */,
+				09D572E026FA204200583899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 09D572AB26FA203C00583899 /* Project object */;
+}
