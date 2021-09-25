@@ -12,6 +12,9 @@ struct AdView: View {
     @State private var price: String = ""
     @State private var bookComment: String = ""
     
+    @State private var selection = 1
+    var arrayOfConditions = ["New","Good","Fair","Poor"]
+    
     var body: some View {
         VStack{
             HStack{
@@ -20,6 +23,7 @@ struct AdView: View {
                     .font(.system(size: 32, weight: .medium, design: .default))
                     .padding()
             }
+            .padding()
             BookInformationView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789")
             VStack{
                 Text("Upload image")
@@ -28,6 +32,16 @@ struct AdView: View {
                     ImageUploadView()
                     ImageUploadView()
                 }
+            }
+            VStack{
+                Text("Condition of Book")
+                    .font(.system(size: 18, weight: .medium))
+                Picker("Condition", selection: $selection) {
+                                    ForEach(0 ..< arrayOfConditions.count) {
+                                        Text(arrayOfConditions[$0])
+                                    }
+                                }.pickerStyle(SegmentedPickerStyle())
+                    .padding()
             }
             VStack{
                 Text("Price")

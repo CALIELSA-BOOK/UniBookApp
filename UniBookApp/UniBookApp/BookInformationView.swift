@@ -18,11 +18,10 @@ struct BookInformationView: View {
                 .renderingMode(.original)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 150, height: 150)
+                .frame(width: 120, height: 120)
             VStack(alignment: .leading){
                 Text(booktitle)
                     .font(.system(size: 26, weight: .medium, design: .default))
-                    .padding()
                 Text(bookauthor)
                     .font(.system(size: 16, weight: .light, design: .default))
                 Text("ISBN: \(bookISBN)")

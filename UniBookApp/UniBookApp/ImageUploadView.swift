@@ -13,7 +13,7 @@ struct ImageUploadView: View {
     var body: some View {
         ZStack{
             Rectangle()
-                .fill(Color.gray)
+                .fill(Color(red: 196/255, green: 196/255, blue: 196/255))
                 .frame(width: 150, height: 150)
                 .cornerRadius(10)
                 .padding(5)
