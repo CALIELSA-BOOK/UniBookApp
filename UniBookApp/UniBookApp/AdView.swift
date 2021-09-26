@@ -21,9 +21,8 @@ struct AdView: View {
                 Image(systemName: "return")
                 Text("Sell Book")
                     .font(.system(size: 32, weight: .medium, design: .default))
-                    .padding()
             }
-            .padding()
+            .padding(.bottom,20)
             BookInformationView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789")
             VStack{
                 Text("Upload image")
@@ -41,21 +40,21 @@ struct AdView: View {
                                         Text(arrayOfConditions[$0])
                                     }
                                 }.pickerStyle(SegmentedPickerStyle())
-                    .padding()
+                    .padding(.bottom)
             }
             VStack{
                 Text("Price")
                     .font(.system(size: 18, weight: .medium))
                 TextField("Price", text: $price)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
+                    .padding(.bottom)
             }
             VStack{
                 Text("Comment")
                     .font(.system(size: 18, weight: .medium))
                 TextField("Comment", text: $bookComment)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
+                    .padding(.bottom)
             }
             //Could add a picker for course name if we have time
             Button(action: {print("Button Tapped")})
@@ -67,6 +66,7 @@ struct AdView: View {
                 .frame(width: 200, height: 30)
                 .background(Color(red: 25/255, green: 85/255, blue: 166/255))
                 .cornerRadius(16)
+            Spacer()
         }
     }
 }
