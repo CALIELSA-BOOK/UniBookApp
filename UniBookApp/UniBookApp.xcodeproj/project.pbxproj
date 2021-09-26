@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0980F1A727009E9900B074FA /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 0980F1A627009E9900B074FA /* FacebookLogin */; };
+		0980F1B42700CA9B00B074FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0980F1B32700CA9B00B074FA /* AppDelegate.swift */; };
+		0980F1B62700D8F300B074FA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0980F1B52700D8F300B074FA /* LoginView.swift */; };
 		09D572B726FA203C00583899 /* UniBookAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D572B626FA203C00583899 /* UniBookAppApp.swift */; };
 		09D572B926FA203C00583899 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D572B826FA203C00583899 /* ContentView.swift */; };
 		09D572BB26FA204200583899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D572BA26FA204200583899 /* Assets.xcassets */; };
@@ -33,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0980F1B32700CA9B00B074FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0980F1B52700D8F300B074FA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = Views/LoginView.swift; sourceTree = "<group>"; };
 		09D572B326FA203C00583899 /* UniBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D572B626FA203C00583899 /* UniBookAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniBookAppApp.swift; sourceTree = "<group>"; };
 		09D572B826FA203C00583899 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0980F1A727009E9900B074FA /* FacebookLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,10 +102,12 @@
 			isa = PBXGroup;
 			children = (
 				09D572B626FA203C00583899 /* UniBookAppApp.swift */,
+				0980F1B32700CA9B00B074FA /* AppDelegate.swift */,
 				09D572B826FA203C00583899 /* ContentView.swift */,
 				09D572BA26FA204200583899 /* Assets.xcassets */,
 				09D572BF26FA204200583899 /* Info.plist */,
 				09D572BC26FA204200583899 /* Preview Content */,
+				0980F1B52700D8F300B074FA /* LoginView.swift */,
 			);
 			path = UniBookApp;
 			sourceTree = "<group>";
@@ -146,6 +154,9 @@
 			dependencies = (
 			);
 			name = UniBookApp;
+			packageProductDependencies = (
+				0980F1A627009E9900B074FA /* FacebookLogin */,
+			);
 			productName = UniBookApp;
 			productReference = 09D572B326FA203C00583899 /* UniBookApp.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +228,9 @@
 				Base,
 			);
 			mainGroup = 09D572AA26FA203C00583899;
+			packageReferences = (
+				0980F1A527009E9800B074FA /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
 			productRefGroup = 09D572B426FA203C00583899 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,7 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0980F1B42700CA9B00B074FA /* AppDelegate.swift in Sources */,
 				09D572B926FA203C00583899 /* ContentView.swift in Sources */,
+				0980F1B62700D8F300B074FA /* LoginView.swift in Sources */,
 				09D572B726FA203C00583899 /* UniBookAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,6 +590,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0980F1A527009E9800B074FA /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0980F1A627009E9900B074FA /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0980F1A527009E9800B074FA /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 09D572AB26FA203C00583899 /* Project object */;
 }

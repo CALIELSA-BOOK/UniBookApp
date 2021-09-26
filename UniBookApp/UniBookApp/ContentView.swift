@@ -7,14 +7,10 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     var body: some View {
-        VStack{
-            Text("Welcome to UniBookApp")
-                .font(.title)
-            Text("Buy and sell course literature")
-                .font(.subheadline)
-        }
+        ContentView()
     }
 }
 
