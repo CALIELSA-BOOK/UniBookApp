@@ -15,6 +15,8 @@ struct AdView: View {
     @State private var selection = 1
     var arrayOfConditions = ["New","Good","Fair","Poor"]
     
+    // @ObservedObject var viewModel = BookViewModel() Could work like this later
+    
     var body: some View {
         VStack{
             HStack{
