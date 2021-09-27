@@ -31,15 +31,31 @@ struct ImageUploadView: View {
                         self.activeImage = true
                     }) {
                         Image(systemName: "plus.square")
+                            .resizable()
+                            .frame(width: 20, height: 20)
                     }
                 }
             }else{
-                Image(uiImage: self.image)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 150, height: 150)
-                    .clipped()
-                    .padding(5)
+                ZStack{
+                    Image(uiImage: self.image)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 150, height: 150)
+                        .clipped()
+                        .padding(5)
+                    Button(action: {
+                        self.isShowPhotoLibrary = false
+                        self.activeImage = false
+                    }) {
+                        Image(systemName: "multiply.square.fill")
+                            .renderingMode(.original)
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .background(Color.white)
+                            .foregroundColor(.red)
+                    }
+                    .offset(x: -70,y: -70)
+                }
             }
         }
         .sheet(isPresented: $isShowPhotoLibrary) {
