@@ -6,14 +6,23 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseDatabase
 
 struct ContentView: View {
+@ObservedObject var messageManager = MessageManager()
     var body: some View {
         VStack{
             Text("Welcome to UniBookApp")
                 .font(.title)
-            Text("Buy and sell course literature")
+            Text("aa")
                 .font(.subheadline)
+            Text(messageManager.message)
+                  .padding().onAppear {
+                    messageManager.startMessageListener()
+                  }.onDisappear {
+                    messageManager.stopMessageListener()
+                  }
         }
     }
 }
@@ -23,3 +32,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
