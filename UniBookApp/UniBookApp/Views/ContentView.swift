@@ -10,11 +10,24 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack{
-            NavigationView{
-                VStack{
-                    Text("Home") //exchange text for homepageview
-                        .navigationTitle("Welcome to UniBookApp")
-                    FooterView()
+            
+            TabView {
+                //FooterView()
+                Text("Home")
+                    .tabItem {
+                        Label("Home", systemImage: "homekit")
+                }
+                Text("Search")
+                    .tabItem {
+                        Label("Search", systemImage: "magnifyingglass")
+                }
+                AdView()
+                    .tabItem {
+                        Label("Add", systemImage: "plus")
+                }
+                Text("Profile")
+                    .tabItem {
+                        Label("Profile", systemImage: "person.crop.circle")
                 }
             }
         }
