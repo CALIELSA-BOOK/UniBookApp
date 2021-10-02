@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct FooterView: View {
-    @StateObject var viewRouter: ViewRouter
 
     var body: some View {
         GeometryReader { geometry in
@@ -31,7 +30,7 @@ struct FooterView: View {
 
 struct FooterView_Previews: PreviewProvider {
     static var previews: some View {
-        FooterView(viewRouter: ViewRouter())
+        FooterView()
     }
 }
 

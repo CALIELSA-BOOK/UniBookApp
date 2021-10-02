@@ -8,17 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewRouter: ViewRouter
-
     var body: some View {
         VStack{
-            FooterView(viewRouter: viewRouter)
+            NavigationView{
+                VStack{
+                    Text("Home") //exchange text for homepageview
+                        .navigationTitle("Welcome to UniBookApp")
+                    FooterView()
+                }
+            }
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewRouter: ViewRouter())
+        ContentView()
     }
 }

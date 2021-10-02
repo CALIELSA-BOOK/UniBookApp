@@ -19,12 +19,6 @@ struct AdView: View {
     
     var body: some View {
         VStack{
-            HStack{
-                Image(systemName: "return")
-                Text("Sell Book")
-                    .font(.system(size: 32, weight: .medium, design: .default))
-            }
-            .padding(.bottom,20)
             BookInformationView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789")
             VStack{
                 Text("Upload image")
@@ -70,6 +64,7 @@ struct AdView: View {
                 .cornerRadius(16)
             Spacer()
         }
+            .navigationTitle("Create Add")
     }
 }
 
