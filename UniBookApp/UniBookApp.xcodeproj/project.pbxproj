@@ -19,6 +19,7 @@
 		32B868C226FF653D00549EC7 /* ImageUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868C126FF653D00549EC7 /* ImageUploadView.swift */; };
 		32B868C42701109400549EC7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868C32701109400549EC7 /* ImagePicker.swift */; };
 		32B868CA2702247400549EC7 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868C92702247400549EC7 /* BookViewModel.swift */; };
+		32B868D22708AF0000549EC7 /* PreviewAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868D12708AF0000549EC7 /* PreviewAdView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		32B868C126FF653D00549EC7 /* ImageUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadView.swift; sourceTree = "<group>"; };
 		32B868C32701109400549EC7 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		32B868C92702247400549EC7 /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
+		32B868D12708AF0000549EC7 /* PreviewAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewAdView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				32B868C92702247400549EC7 /* BookViewModel.swift */,
 				32B868C126FF653D00549EC7 /* ImageUploadView.swift */,
 				32B868B926FF286100549EC7 /* AdView.swift */,
+				32B868D12708AF0000549EC7 /* PreviewAdView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			files = (
 				32B868BA26FF286100549EC7 /* AdView.swift in Sources */,
 				32B868BE26FF354F00549EC7 /* SearchbarView.swift in Sources */,
+				32B868D22708AF0000549EC7 /* PreviewAdView.swift in Sources */,
 				32B868C026FF643200549EC7 /* BookInformationView.swift in Sources */,
 				32B868C42701109400549EC7 /* ImagePicker.swift in Sources */,
 				32B868C226FF653D00549EC7 /* ImageUploadView.swift in Sources */,

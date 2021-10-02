@@ -11,22 +11,30 @@ struct ContentView: View {
     var body: some View {
         VStack{
             TabView {
-                Text("Home")
+                NavigationView {
+                    Text("Home View")
+                        .navigationBarTitle("Welcome")
+                }
                     .tabItem {
                         Label("Home", systemImage: "homekit")
                 }
-                Text("Search")
+                NavigationView {
+                    Text("Search View")
+                        .navigationTitle("Search")
+                }
                     .tabItem {
                         Label("Search", systemImage: "magnifyingglass")
                 }
                 NavigationView {
                     AdView()
-                        .navigationBarTitle("Sell Book")
                 }
                     .tabItem {
                         Label("Add", systemImage: "plus")
                 }
-                Text("Profile")
+                NavigationView {
+                    Text("Profile View")
+                        .navigationTitle("Profile")
+                }
                     .tabItem {
                         Label("Profile", systemImage: "person.crop.circle")
                 }

@@ -13,6 +13,7 @@ struct AdView: View {
     @State private var bookComment: String = ""
     
     @State private var selection = 1
+    @State private var isShowingDetails = false
     var arrayOfConditions = ["New","Good","Fair","Poor"]
     
     // @ObservedObject var viewModel = BookViewModel() -- > Could work like this later
@@ -53,15 +54,19 @@ struct AdView: View {
                     .padding(.bottom)
             }
             //Could add a picker for course name if we have time
-            Button(action: {print("Button Tapped")})
-                {
-                    Text("POST AD")
-                }
-                .foregroundColor(.white)
-                .padding(.all)
-                .frame(width: 250, height: 50)
-                .background(Color(red: 25/255, green: 85/255, blue: 166/255))
-                .cornerRadius(16)
+            // Send in data to preview View
+            NavigationLink(destination: PreviewAdView(), isActive: $isShowingDetails){
+                Button("POST AD")
+                    {
+                        self.isShowingDetails = true
+                    }
+                    .foregroundColor(.white)
+                    .padding(.all)
+                    .frame(width: 250, height: 50)
+                    .background(Color(red: 25/255, green: 85/255, blue: 166/255))
+                    .cornerRadius(16)
+            }
+           
             Spacer()
         }
             .navigationTitle("Create Add")
