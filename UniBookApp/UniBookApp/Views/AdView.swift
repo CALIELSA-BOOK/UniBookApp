@@ -59,7 +59,7 @@ struct AdView: View {
                 }
                 .foregroundColor(.white)
                 .padding(.all)
-                .frame(width: 200, height: 30)
+                .frame(width: 250, height: 50)
                 .background(Color(red: 25/255, green: 85/255, blue: 166/255))
                 .cornerRadius(16)
             Spacer()

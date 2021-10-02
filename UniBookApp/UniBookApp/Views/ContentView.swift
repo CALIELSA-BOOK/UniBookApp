@@ -10,9 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack{
-            
             TabView {
-                //FooterView()
                 Text("Home")
                     .tabItem {
                         Label("Home", systemImage: "homekit")
@@ -21,7 +19,10 @@ struct ContentView: View {
                     .tabItem {
                         Label("Search", systemImage: "magnifyingglass")
                 }
-                AdView()
+                NavigationView {
+                    AdView()
+                        .navigationBarTitle("Sell Book")
+                }
                     .tabItem {
                         Label("Add", systemImage: "plus")
                 }
