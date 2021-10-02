@@ -13,23 +13,13 @@ struct FooterView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack{
-                Spacer()
-                switch viewRouter.currentPage {
-                case .home:
-                    Text("Home")
-                case .add:
-                    AdView()
-                case .search:
-                   Text("Search")
-                case .profile:
-                    Text("Profile")
-                }
-                Spacer()
                 HStack{
-                    TabBarIcon(viewRouter: viewRouter, assignedPage: .home, width: geometry.size.width/4, height: geometry.size.height/28, systemIconName: "homekit", tabName: "Home")
-                    TabBarIcon(viewRouter: viewRouter, assignedPage: .search, width: geometry.size.width/4, height: geometry.size.height/28, systemIconName: "magnifyingglass", tabName: "Search")
-                    TabBarIcon(viewRouter: viewRouter, assignedPage: .add, width: geometry.size.width/4, height: geometry.size.height/28, systemIconName: "plus", tabName: "Add")
-                    TabBarIcon(viewRouter: viewRouter, assignedPage: .profile, width: geometry.size.width/4, height: geometry.size.height/28, systemIconName: "person.crop.circle", tabName: "Profile")
+                    TabBarIcon(width: geometry.size.width/4, height: geometry.size.height/28, systemIconName: "homekit", tabName: "Home")
+                    TabBarIcon(width: geometry.size.width/4, height: geometry.size.height/28, systemIconName: "magnifyingglass", tabName: "Search")
+                    NavigationLink(destination: AdView()){
+                        TabBarIcon(width: geometry.size.width/4, height: geometry.size.height/28, systemIconName: "plus", tabName: "Add")
+                    }
+                    TabBarIcon(width: geometry.size.width/4, height: geometry.size.height/28, systemIconName: "person.crop.circle", tabName: "Profile")
                 }
                     .frame(width: geometry.size.width, height: geometry.size.height/8)
                     .background(Color(red: 196/255, green: 196/255, blue: 196/255).shadow(radius: 2))
@@ -47,9 +37,6 @@ struct FooterView_Previews: PreviewProvider {
 
 struct TabBarIcon: View {
     
-    @StateObject var viewRouter: ViewRouter
-    let assignedPage: Page
-    
     let width, height: CGFloat
     let systemIconName, tabName: String
 
@@ -65,8 +52,5 @@ struct TabBarIcon: View {
             Spacer()
         }
             .padding(.horizontal, -4)
-            .onTapGesture {
-                viewRouter.currentPage = assignedPage
-            }
     }
 }
