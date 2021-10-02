@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewRouter: ViewRouter
+
     var body: some View {
         VStack{
-            Text("Welcome to UniBookApp")
-                .font(.title)
-            Text("Buy and sell course literature")
-                .font(.subheadline)
+            FooterView(viewRouter: viewRouter)
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewRouter: ViewRouter())
     }
 }
