@@ -11,6 +11,7 @@ struct HomeView: View {
     @State private var searchText = ""
     
     var body: some View {
+        GeometryReader{ geometry in
         VStack{
             if #available(iOS 15.0, *) {
                 Text("")
@@ -34,28 +35,20 @@ struct HomeView: View {
             Spacer()
             VStack(alignment: .leading){
                 Text("Latest Ads")
-                    .font(.system(size: 20.0))
-                    .bold()
-                    //set to left side
+                    .font(.system(size: 20.0, weight: .bold))
+                    .padding(.top)
                 ScrollView{
-                    Rectangle()
-                        .fill(Color.gray)
-                        .frame(width: 340, height: 60)
-                        .cornerRadius(10)
-                    Rectangle()
-                        .fill(Color.white)
-                        .frame(width: 340, height: 60)
-                        .cornerRadius(10)
-                    Rectangle()
-                        .fill(Color.gray)
-                        .frame(width: 340, height: 60)
-                        .cornerRadius(10)
-                    Rectangle()
-                        .fill(Color.white)
-                        .frame(width: 340, height: 60)
-                        .cornerRadius(10)
+                    BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: 230)
+                        .padding(.bottom,geometry.size.height * 0.10)
+                    BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: 340)
+                        .padding(.bottom,geometry.size.height * 0.10)
+                    BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: 500)
+                        .padding(.bottom,geometry.size.height * 0.10)
+                    BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: 320)
+                        .padding(.bottom,geometry.size.height * 0.10)
                 }
             }
+        }
         }
     }
 }
@@ -65,6 +58,7 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
+
 
 struct PreviewPopularBooksView: View {
     
@@ -76,7 +70,6 @@ struct PreviewPopularBooksView: View {
                         .foregroundColor(.black)
                         .frame(width: 250, height: 150)
                         .background(Color.white)
-                        .cornerRadius(10)
                 }
             }
         }
