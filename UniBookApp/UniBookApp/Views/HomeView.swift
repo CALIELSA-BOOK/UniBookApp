@@ -63,7 +63,7 @@ struct HomeView_Previews: PreviewProvider {
 struct PreviewPopularBooksView: View {
     
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: true) {
+        ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 20) {
                 ForEach(0..<5) { index in
                     BookInformationView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789")
