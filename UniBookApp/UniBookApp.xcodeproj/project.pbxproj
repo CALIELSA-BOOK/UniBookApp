@@ -3,16 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0980F1A727009E9900B074FA /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 0980F1A627009E9900B074FA /* FacebookLogin */; };
+		0980F1B42700CA9B00B074FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0980F1B32700CA9B00B074FA /* AppDelegate.swift */; };
+		0980F1B62700D8F300B074FA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0980F1B52700D8F300B074FA /* LoginView.swift */; };
 		09D572B726FA203C00583899 /* UniBookAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D572B626FA203C00583899 /* UniBookAppApp.swift */; };
-		09D572B926FA203C00583899 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D572B826FA203C00583899 /* ContentView.swift */; };
 		09D572BB26FA204200583899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D572BA26FA204200583899 /* Assets.xcassets */; };
 		09D572BE26FA204200583899 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D572BD26FA204200583899 /* Preview Assets.xcassets */; };
 		09D572C926FA204200583899 /* UniBookAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D572C826FA204200583899 /* UniBookAppTests.swift */; };
 		09D572D426FA204200583899 /* UniBookAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D572D326FA204200583899 /* UniBookAppUITests.swift */; };
+		09EFA4372701E2FF00A46742 /* StartPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EFA4362701E2FF00A46742 /* StartPageView.swift */; };
+		09EFA43A2701EE5200A46742 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 09EFA4392701EE5200A46742 /* GoogleSignIn */; };
+		09EFA43C2701F51F00A46742 /* GoogleLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EFA43B2701F51F00A46742 /* GoogleLoginView.swift */; };
+		09EFA43E2702048200A46742 /* LoginOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EFA43D2702048200A46742 /* LoginOptionsView.swift */; };
 		32B868BA26FF286100549EC7 /* AdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868B926FF286100549EC7 /* AdView.swift */; };
 		32B868BE26FF354F00549EC7 /* SearchbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868BD26FF354F00549EC7 /* SearchbarView.swift */; };
 		32B868C026FF643200549EC7 /* BookInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868BF26FF643200549EC7 /* BookInformationView.swift */; };
@@ -40,9 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0980F1B32700CA9B00B074FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0980F1B52700D8F300B074FA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		09A5FC1D2708FAFF00976951 /* UniBookApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UniBookApp.entitlements; sourceTree = "<group>"; };
 		09D572B326FA203C00583899 /* UniBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D572B626FA203C00583899 /* UniBookAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniBookAppApp.swift; sourceTree = "<group>"; };
-		09D572B826FA203C00583899 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		09D572BA26FA204200583899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09D572BD26FA204200583899 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		09D572BF26FA204200583899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +60,9 @@
 		09D572CF26FA204200583899 /* UniBookAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniBookAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D572D326FA204200583899 /* UniBookAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniBookAppUITests.swift; sourceTree = "<group>"; };
 		09D572D526FA204200583899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09EFA4362701E2FF00A46742 /* StartPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageView.swift; sourceTree = "<group>"; };
+		09EFA43B2701F51F00A46742 /* GoogleLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLoginView.swift; sourceTree = "<group>"; };
+		09EFA43D2702048200A46742 /* LoginOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOptionsView.swift; sourceTree = "<group>"; };
 		32B868B926FF286100549EC7 /* AdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdView.swift; sourceTree = "<group>"; };
 		32B868BD26FF354F00549EC7 /* SearchbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchbarView.swift; sourceTree = "<group>"; };
 		32B868BF26FF643200549EC7 /* BookInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInformationView.swift; sourceTree = "<group>"; };
@@ -66,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0980F1A727009E9900B074FA /* FacebookLogin in Frameworks */,
+				09EFA43A2701EE5200A46742 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +122,9 @@
 		09D572B526FA203C00583899 /* UniBookApp */ = {
 			isa = PBXGroup;
 			children = (
+				09A5FC1D2708FAFF00976951 /* UniBookApp.entitlements */,
 				09D572B626FA203C00583899 /* UniBookAppApp.swift */,
+				0980F1B32700CA9B00B074FA /* AppDelegate.swift */,
 				32B868CB2702249600549EC7 /* Views */,
 				32B868CC270224D500549EC7 /* Components */,
 				09D572BA26FA204200583899 /* Assets.xcassets */,
@@ -148,10 +163,13 @@
 		32B868CB2702249600549EC7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				09D572B826FA203C00583899 /* ContentView.swift */,
 				32B868C92702247400549EC7 /* BookViewModel.swift */,
 				32B868C126FF653D00549EC7 /* ImageUploadView.swift */,
 				32B868B926FF286100549EC7 /* AdView.swift */,
+				0980F1B52700D8F300B074FA /* LoginView.swift */,
+				09EFA4362701E2FF00A46742 /* StartPageView.swift */,
+				09EFA43B2701F51F00A46742 /* GoogleLoginView.swift */,
+				09EFA43D2702048200A46742 /* LoginOptionsView.swift */,
 				32B868D12708AF0000549EC7 /* PreviewAdView.swift */,
 			);
 			path = Views;
@@ -183,6 +201,10 @@
 			dependencies = (
 			);
 			name = UniBookApp;
+			packageProductDependencies = (
+				0980F1A627009E9900B074FA /* FacebookLogin */,
+				09EFA4392701EE5200A46742 /* GoogleSignIn */,
+			);
 			productName = UniBookApp;
 			productReference = 09D572B326FA203C00583899 /* UniBookApp.app */;
 			productType = "com.apple.product-type.application";
@@ -254,6 +276,10 @@
 				Base,
 			);
 			mainGroup = 09D572AA26FA203C00583899;
+			packageReferences = (
+				0980F1A527009E9800B074FA /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				09EFA4382701EE5200A46742 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			productRefGroup = 09D572B426FA203C00583899 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -296,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0980F1B42700CA9B00B074FA /* AppDelegate.swift in Sources */,
 				32B868BA26FF286100549EC7 /* AdView.swift in Sources */,
 				32B868BE26FF354F00549EC7 /* SearchbarView.swift in Sources */,
 				32B868D22708AF0000549EC7 /* PreviewAdView.swift in Sources */,
@@ -303,8 +330,11 @@
 				32B868C42701109400549EC7 /* ImagePicker.swift in Sources */,
 				32B868C226FF653D00549EC7 /* ImageUploadView.swift in Sources */,
 				32B868CA2702247400549EC7 /* BookViewModel.swift in Sources */,
-				09D572B926FA203C00583899 /* ContentView.swift in Sources */,
+				09EFA4372701E2FF00A46742 /* StartPageView.swift in Sources */,
+				09EFA43E2702048200A46742 /* LoginOptionsView.swift in Sources */,
+				0980F1B62700D8F300B074FA /* LoginView.swift in Sources */,
 				09D572B726FA203C00583899 /* UniBookAppApp.swift in Sources */,
+				09EFA43C2701F51F00A46742 /* GoogleLoginView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,8 +491,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = UniBookApp/UniBookApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"UniBookApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 48D6ZY9L3C;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = UniBookApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -472,6 +505,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "CALIELSA-BOOK.UniBookApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -482,8 +516,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = UniBookApp/UniBookApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"UniBookApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 48D6ZY9L3C;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = UniBookApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -493,6 +530,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "CALIELSA-BOOK.UniBookApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -618,6 +656,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0980F1A527009E9800B074FA /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.2.1;
+			};
+		};
+		09EFA4382701EE5200A46742 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0980F1A627009E9900B074FA /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0980F1A527009E9800B074FA /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+		09EFA4392701EE5200A46742 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09EFA4382701EE5200A46742 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 09D572AB26FA203C00583899 /* Project object */;
 }
