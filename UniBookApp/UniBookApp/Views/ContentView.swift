@@ -10,10 +10,35 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack{
-            Text("Welcome to UniBookApp")
-                .font(.title)
-            Text("Buy and sell course literature")
-                .font(.subheadline)
+            TabView {
+                NavigationView {
+                    Text("Home View")
+                        .navigationBarTitle("Welcome")
+                }
+                    .tabItem {
+                        Label("Home", systemImage: "homekit")
+                }
+                NavigationView {
+                    Text("Search View")
+                        .navigationTitle("Search")
+                }
+                    .tabItem {
+                        Label("Search", systemImage: "magnifyingglass")
+                }
+                NavigationView {
+                    AdView()
+                }
+                    .tabItem {
+                        Label("Add", systemImage: "plus")
+                }
+                NavigationView {
+                    Text("Profile View")
+                        .navigationTitle("Profile")
+                }
+                    .tabItem {
+                        Label("Profile", systemImage: "person.crop.circle")
+                }
+            }
         }
     }
 }
