@@ -13,6 +13,7 @@
 		09D572BE26FA204200583899 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D572BD26FA204200583899 /* Preview Assets.xcassets */; };
 		09D572C926FA204200583899 /* UniBookAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D572C826FA204200583899 /* UniBookAppTests.swift */; };
 		09D572D426FA204200583899 /* UniBookAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D572D326FA204200583899 /* UniBookAppUITests.swift */; };
+		328F2E0227158EE1006CF628 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F2E0127158EE1006CF628 /* ProfileView.swift */; };
 		32B868BA26FF286100549EC7 /* AdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868B926FF286100549EC7 /* AdView.swift */; };
 		32B868BE26FF354F00549EC7 /* SearchbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868BD26FF354F00549EC7 /* SearchbarView.swift */; };
 		32B868C026FF643200549EC7 /* BookInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868BF26FF643200549EC7 /* BookInformationView.swift */; };
@@ -52,6 +53,7 @@
 		09D572CF26FA204200583899 /* UniBookAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniBookAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D572D326FA204200583899 /* UniBookAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniBookAppUITests.swift; sourceTree = "<group>"; };
 		09D572D526FA204200583899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		328F2E0127158EE1006CF628 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		32B868B926FF286100549EC7 /* AdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdView.swift; sourceTree = "<group>"; };
 		32B868BD26FF354F00549EC7 /* SearchbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchbarView.swift; sourceTree = "<group>"; };
 		32B868BF26FF643200549EC7 /* BookInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInformationView.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				32B868C126FF653D00549EC7 /* ImageUploadView.swift */,
 				32B868B926FF286100549EC7 /* AdView.swift */,
 				32B868D12708AF0000549EC7 /* PreviewAdView.swift */,
+				328F2E0127158EE1006CF628 /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			files = (
 				32B868BA26FF286100549EC7 /* AdView.swift in Sources */,
 				32B868BE26FF354F00549EC7 /* SearchbarView.swift in Sources */,
+				328F2E0227158EE1006CF628 /* ProfileView.swift in Sources */,
 				32B868D22708AF0000549EC7 /* PreviewAdView.swift in Sources */,
 				32B868C026FF643200549EC7 /* BookInformationView.swift in Sources */,
 				32B868C42701109400549EC7 /* ImagePicker.swift in Sources */,

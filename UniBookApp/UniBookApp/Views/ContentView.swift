@@ -32,7 +32,7 @@ struct ContentView: View {
                         Label("Add", systemImage: "plus")
                 }
                 NavigationView {
-                    Text("Profile View")
+                    ProfileView()
                         .navigationTitle("Profile")
                 }
                     .tabItem {
