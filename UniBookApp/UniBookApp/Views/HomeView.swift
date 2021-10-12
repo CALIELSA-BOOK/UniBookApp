@@ -15,7 +15,7 @@ struct HomeView: View {
         VStack{
             if #available(iOS 15.0, *) {
                 Text("")
-                   .searchable(text: $searchText)
+                   .searchable(text: $searchText, prompt: "Seach for Book")
             } else {
                 // Fallback on earlier versions
             }
