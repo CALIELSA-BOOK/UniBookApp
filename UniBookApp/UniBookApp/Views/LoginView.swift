@@ -28,14 +28,18 @@ struct Home : View {
     @State var manager = LoginManager()
     
     var body: some View{
-        
         VStack(){
+            FBLog(logged: $logged, email: $email)
+                .frame(height: 50)
+                .padding(.horizontal,35)
+        VStack(spacing: 25){
             FBLog(logged: $logged, email: $email)
                 .frame(height: 50)
                 .padding(.horizontal,35)
             Text(email)
                 .fontWeight(.bold)
         }
+    }
     }
 }
 
@@ -98,50 +102,3 @@ struct FBLog : UIViewRepresentable {
 }
 
 
-//        VStack(spacing: 25){
-//
-//            //Custom Login Button
-//            Button(action: {
-//
-//                if logged{
-//                    manager.logOut()
-//                    email = ""
-//                    logged = false
-//                }
-//                else{
-//                    manager.logIn(permissions: ["public_profie","email"], from: nil) {
-//                        (result, err) in
-//                        if err != nil{
-//                            print(err!.localizedDescription)
-//                            return
-//                        }
-//
-//                        if result!.isCancelled{
-//                            logged = true
-//
-//                            //getting user details
-//                            let request = GraphRequest(graphPath: "me", parameters: ["fields": "email"])
-//
-//                            request.start { (_, res, _) in
-//                                //will return as dictionary
-//                                guard let profileData = res as? [String : Any] else{return}
-//
-//                                email = profileData["email"] as! String
-//                            }
-//                        }
-//
-//                    }
-//                }
-//
-//            }, label: {
-//                Text(logged ? "LogOut" : "FB Login")
-//                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-//                    .foregroundColor(.white)
-//                    .padding(.vertical,10)
-//                    .background(Color.blue)
-//                    .clipShape(Capsule())
-//
-//            })
-//            Text(email)
-//                .fontWeight(.bold)
-//        }

@@ -49,6 +49,7 @@
 		0980F1B32700CA9B00B074FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0980F1B52700D8F300B074FA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		09A5FC1D2708FAFF00976951 /* UniBookApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UniBookApp.entitlements; sourceTree = "<group>"; };
+		0980F1B52700D8F300B074FA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = Views/LoginView.swift; sourceTree = "<group>"; };
 		09D572B326FA203C00583899 /* UniBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D572B626FA203C00583899 /* UniBookAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniBookAppApp.swift; sourceTree = "<group>"; };
 		09D572BA26FA204200583899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,9 +128,11 @@
 				0980F1B32700CA9B00B074FA /* AppDelegate.swift */,
 				32B868CB2702249600549EC7 /* Views */,
 				32B868CC270224D500549EC7 /* Components */,
+				09D572B826FA203C00583899 /* ContentView.swift */,
 				09D572BA26FA204200583899 /* Assets.xcassets */,
 				09D572BF26FA204200583899 /* Info.plist */,
 				09D572BC26FA204200583899 /* Preview Content */,
+				0980F1B52700D8F300B074FA /* LoginView.swift */,
 			);
 			path = UniBookApp;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				32B868CA2702247400549EC7 /* BookViewModel.swift in Sources */,
 				09EFA4372701E2FF00A46742 /* StartPageView.swift in Sources */,
 				09EFA43E2702048200A46742 /* LoginOptionsView.swift in Sources */,
+				09D572B926FA203C00583899 /* ContentView.swift in Sources */,
 				0980F1B62700D8F300B074FA /* LoginView.swift in Sources */,
 				09D572B726FA203C00583899 /* UniBookAppApp.swift in Sources */,
 				09EFA43C2701F51F00A46742 /* GoogleLoginView.swift in Sources */,

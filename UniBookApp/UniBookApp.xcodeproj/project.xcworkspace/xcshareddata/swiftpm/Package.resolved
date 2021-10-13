@@ -2,6 +2,7 @@
   "object": {
     "pins": [
       {
+<<<<<<< HEAD
         "package": "AppAuth",
         "repositoryURL": "https://github.com/openid/AppAuth-iOS.git",
         "state": {
@@ -11,6 +12,8 @@
         }
       },
       {
+=======
+>>>>>>> 03bf664517ce199cc981e87b00f36e64e4304f56
         "package": "Facebook",
         "repositoryURL": "https://github.com/facebook/facebook-ios-sdk",
         "state": {
@@ -18,6 +21,7 @@
           "revision": "c46ba480e9b176a950c428b1a1ec3fd57810f8fe",
           "version": "11.2.1"
         }
+<<<<<<< HEAD
       },
       {
         "package": "GoogleSignIn",
@@ -45,6 +49,8 @@
           "revision": "40f4103fb52109032c05599a0c39ad43edbdf80a",
           "version": "1.2.2"
         }
+=======
+>>>>>>> 03bf664517ce199cc981e87b00f36e64e4304f56
       }
     ]
   },
