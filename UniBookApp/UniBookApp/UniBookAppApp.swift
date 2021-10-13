@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct UniBookAppApp: App {
+    init() {
+      FirebaseApp.configure()
+    }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AdView()
         }
     }
 }

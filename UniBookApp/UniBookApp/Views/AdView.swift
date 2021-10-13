@@ -6,17 +6,18 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseDatabase
 
 struct AdView: View {
+    @ObservedObject var messageManager = MessageManager()
     
     @State private var price: String = ""
     @State private var bookComment: String = ""
     
     @State private var selection = 1
     var arrayOfConditions = ["New","Good","Fair","Poor"]
-    
     // @ObservedObject var viewModel = BookViewModel() -- > Could work like this later
-    
     var body: some View {
         VStack{
             HStack{
@@ -52,6 +53,13 @@ struct AdView: View {
                     .padding(.bottom)
             }
             VStack{
+                Text(messageManager.message)
+                                 .padding().onAppear {
+                                   messageManager.startMessageListener()
+                                    messageManager.writeToDatabase()
+                                 }.onDisappear {
+                                   messageManager.stopMessageListener()
+                                 }
                 Text("Comment")
                     .font(.system(size: 18, weight: .medium))
                 TextField("Comment", text: $bookComment)
