@@ -12,7 +12,7 @@ struct ContentView: View {
         VStack{
             TabView {
                 NavigationView {
-                    Text("Home View")
+                    HomeView()
                         .navigationBarTitle("Welcome")
                 }
                     .tabItem {
@@ -26,7 +26,9 @@ struct ContentView: View {
                         Label("Search", systemImage: "magnifyingglass")
                 }
                 NavigationView {
-                    AdView()
+                    ScrollView {
+                        AdView()
+                    }
                 }
                     .tabItem {
                         Label("Add", systemImage: "plus")
