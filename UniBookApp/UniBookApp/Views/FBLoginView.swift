@@ -31,8 +31,6 @@ struct Home : View {
             FBLog(logged: $logged, email: $email)
                 .frame(height: 50)
                 .padding(.horizontal,35)
-            Text(email)
-                .fontWeight(.bold)
         }
     }
 }
@@ -87,6 +85,7 @@ struct FBLog : UIViewRepresentable {
                 }
             }
         }
+        
         func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
             parent.logged = false
             parent.email = ""

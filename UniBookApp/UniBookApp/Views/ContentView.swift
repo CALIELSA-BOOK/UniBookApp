@@ -6,39 +6,48 @@
 //
 
 import SwiftUI
+import FBSDKLoginKit
 
 struct ContentView: View {
+    
     var body: some View {
-        VStack{
-            TabView {
-                NavigationView {
-                    HomeView()
-                        .navigationBarTitle("Welcome")
-                }
-                    .tabItem {
-                        Label("Home", systemImage: "homekit")
-                }
-                NavigationView {
-                    Text("Search View")
-                        .navigationTitle("Search")
-                }
-                    .tabItem {
-                        Label("Search", systemImage: "magnifyingglass")
-                }
-                NavigationView {
-                    ScrollView {
-                        AdView()
+
+        if (AccessToken.current == nil) {
+            NavigationView{
+                StartPageView()
+            }
+        }else{
+            VStack{
+                TabView {
+                    NavigationView {
+                        HomeView()
+                            .navigationBarTitle("Welcome")
                     }
-                }
-                    .tabItem {
-                        Label("Add", systemImage: "plus")
-                }
-                NavigationView {
-                    ProfileView()
-                        .navigationTitle("Profile")
-                }
-                    .tabItem {
-                        Label("Profile", systemImage: "person.crop.circle")
+                        .tabItem {
+                            Label("Home", systemImage: "homekit")
+                    }
+                    NavigationView {
+                        Text("Search")
+                            .navigationTitle("Search")
+                    }
+                        .tabItem {
+                            Label("Search", systemImage: "magnifyingglass")
+                    }
+                    NavigationView {
+                        ScrollView {
+                            AdView()
+                        }
+                    }
+                        .tabItem {
+                            Label("Add", systemImage: "plus")
+                    }
+                    NavigationView {
+                        ProfileView()
+                            .navigationTitle("Profile")
+                    }
+                        .tabItem {
+                            Label("Profile", systemImage: "person.crop.circle")
+                    }
                 }
             }
         }

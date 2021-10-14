@@ -15,6 +15,7 @@
 		09C5D90027173F3800D0E129 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = 09C5D8FF27173F3800D0E129 /* FacebookBasics */; };
 		09C5D9022718292800D0E129 /* LoginOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D9012718292800D0E129 /* LoginOptionsView.swift */; };
 		09C5D904271833B200D0E129 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 09C5D903271833B200D0E129 /* .gitignore */; };
+		09C5D906271836E500D0E129 /* StartPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D905271836E500D0E129 /* StartPageView.swift */; };
 		09D572B726FA203C00583899 /* UniBookAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D572B626FA203C00583899 /* UniBookAppApp.swift */; };
 		09D572B926FA203C00583899 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D572B826FA203C00583899 /* ContentView.swift */; };
 		09D572BB26FA204200583899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D572BA26FA204200583899 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		09C5D8F927173C1600D0E129 /* facebook-ios-sdk */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "facebook-ios-sdk"; path = "/Users/saradamne/Library/Developer/Xcode/DerivedData/UniBookApp-crwothsbqchmbqdevmnalbgibdyk/SourcePackages/checkouts/facebook-ios-sdk"; sourceTree = "<absolute>"; };
 		09C5D9012718292800D0E129 /* LoginOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOptionsView.swift; sourceTree = "<group>"; };
 		09C5D903271833B200D0E129 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		09C5D905271836E500D0E129 /* StartPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageView.swift; sourceTree = "<group>"; };
 		09D572B326FA203C00583899 /* UniBookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniBookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D572B626FA203C00583899 /* UniBookAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniBookAppApp.swift; sourceTree = "<group>"; };
 		09D572B826FA203C00583899 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				328F2DFF2713655F006CF628 /* BookItemView.swift */,
 				09C5D8F2271726DE00D0E129 /* FBLoginView.swift */,
 				09C5D9012718292800D0E129 /* LoginOptionsView.swift */,
+				09C5D905271836E500D0E129 /* StartPageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				09C5D9022718292800D0E129 /* LoginOptionsView.swift in Sources */,
 				32B868C42701109400549EC7 /* ImagePicker.swift in Sources */,
 				09C5D8F12717265500D0E129 /* AppDelegate.swift in Sources */,
+				09C5D906271836E500D0E129 /* StartPageView.swift in Sources */,
 				32B868C226FF653D00549EC7 /* ImageUploadView.swift in Sources */,
 				32B868CA2702247400549EC7 /* BookViewModel.swift in Sources */,
 				09C5D8F3271726DE00D0E129 /* FBLoginView.swift in Sources */,
