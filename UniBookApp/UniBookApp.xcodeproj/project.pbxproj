@@ -13,17 +13,22 @@
 		09D572BE26FA204200583899 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D572BD26FA204200583899 /* Preview Assets.xcassets */; };
 		09D572C926FA204200583899 /* UniBookAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D572C826FA204200583899 /* UniBookAppTests.swift */; };
 		09D572D426FA204200583899 /* UniBookAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D572D326FA204200583899 /* UniBookAppUITests.swift */; };
+		328F2DFE27120F39006CF628 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F2DFD27120F39006CF628 /* HomeView.swift */; };
+		328F2E002713655F006CF628 /* BookItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F2DFF2713655F006CF628 /* BookItemView.swift */; };
+		328F2E0227158EE1006CF628 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328F2E0127158EE1006CF628 /* ProfileView.swift */; };
 		32B868BA26FF286100549EC7 /* AdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868B926FF286100549EC7 /* AdView.swift */; };
 		32B868BE26FF354F00549EC7 /* SearchbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868BD26FF354F00549EC7 /* SearchbarView.swift */; };
 		32B868C026FF643200549EC7 /* BookInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868BF26FF643200549EC7 /* BookInformationView.swift */; };
 		32B868C226FF653D00549EC7 /* ImageUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868C126FF653D00549EC7 /* ImageUploadView.swift */; };
 		32B868C42701109400549EC7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868C32701109400549EC7 /* ImagePicker.swift */; };
 		32B868CA2702247400549EC7 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868C92702247400549EC7 /* BookViewModel.swift */; };
+		32B868D22708AF0000549EC7 /* PreviewAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868D12708AF0000549EC7 /* PreviewAdView.swift */; };
 		FA910C8427118AF900CB9EB2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FA910C8327118AF900CB9EB2 /* FirebaseAnalytics */; };
 		FA910C8627118AF900CB9EB2 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = FA910C8527118AF900CB9EB2 /* FirebaseDatabase */; };
 		FA910C8827118AF900CB9EB2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FA910C8727118AF900CB9EB2 /* FirebaseFirestore */; };
 		FA910C8B27118F7300CB9EB2 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA910C8A27118F7300CB9EB2 /* MessageManager.swift */; };
 		FA910C8D2711916E00CB9EB2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA910C8C2711916E00CB9EB2 /* GoogleService-Info.plist */; };
+		FAB4B3A62719A9E2003F8A9A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4B3A52719A9E2003F8A9A /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,14 +61,19 @@
 		09D572CF26FA204200583899 /* UniBookAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniBookAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D572D326FA204200583899 /* UniBookAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniBookAppUITests.swift; sourceTree = "<group>"; };
 		09D572D526FA204200583899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		328F2DFD27120F39006CF628 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		328F2DFF2713655F006CF628 /* BookItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookItemView.swift; sourceTree = "<group>"; };
+		328F2E0127158EE1006CF628 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		32B868B926FF286100549EC7 /* AdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdView.swift; sourceTree = "<group>"; };
 		32B868BD26FF354F00549EC7 /* SearchbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchbarView.swift; sourceTree = "<group>"; };
 		32B868BF26FF643200549EC7 /* BookInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInformationView.swift; sourceTree = "<group>"; };
 		32B868C126FF653D00549EC7 /* ImageUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadView.swift; sourceTree = "<group>"; };
 		32B868C32701109400549EC7 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		32B868C92702247400549EC7 /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
+		32B868D12708AF0000549EC7 /* PreviewAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewAdView.swift; sourceTree = "<group>"; };
 		FA910C8A27118F7300CB9EB2 /* MessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
 		FA910C8C2711916E00CB9EB2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "UniBookApp/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAB4B3A52719A9E2003F8A9A /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +172,11 @@
 				32B868C92702247400549EC7 /* BookViewModel.swift */,
 				32B868C126FF653D00549EC7 /* ImageUploadView.swift */,
 				32B868B926FF286100549EC7 /* AdView.swift */,
+				32B868D12708AF0000549EC7 /* PreviewAdView.swift */,
+				328F2E0127158EE1006CF628 /* ProfileView.swift */,
+				328F2DFD27120F39006CF628 /* HomeView.swift */,
+				328F2DFF2713655F006CF628 /* BookItemView.swift */,
+				FAB4B3A52719A9E2003F8A9A /* DataModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -325,11 +340,16 @@
 				FA910C8B27118F7300CB9EB2 /* MessageManager.swift in Sources */,
 				32B868BA26FF286100549EC7 /* AdView.swift in Sources */,
 				32B868BE26FF354F00549EC7 /* SearchbarView.swift in Sources */,
+				328F2E0227158EE1006CF628 /* ProfileView.swift in Sources */,
+				32B868D22708AF0000549EC7 /* PreviewAdView.swift in Sources */,
+				328F2DFE27120F39006CF628 /* HomeView.swift in Sources */,
 				32B868C026FF643200549EC7 /* BookInformationView.swift in Sources */,
+				FAB4B3A62719A9E2003F8A9A /* DataModel.swift in Sources */,
 				32B868C42701109400549EC7 /* ImagePicker.swift in Sources */,
 				32B868C226FF653D00549EC7 /* ImageUploadView.swift in Sources */,
 				32B868CA2702247400549EC7 /* BookViewModel.swift in Sources */,
 				09D572B926FA203C00583899 /* ContentView.swift in Sources */,
+				328F2E002713655F006CF628 /* BookItemView.swift in Sources */,
 				09D572B726FA203C00583899 /* UniBookAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
