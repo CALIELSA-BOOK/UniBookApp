@@ -35,16 +35,7 @@ struct ProfileView: View {
                 }
             }
             //FIX so that user is logged out when pressing button
-            Button("Sign out")
-                {
-                    self.isShowingDetails = true
-                }
-                .foregroundColor(.white)
-                .padding(.all)
-                .frame(width: 250, height: 50)
-                .background(Color(red: 166/255, green: 25/255, blue: 55/255))
-                .cornerRadius(16)
-
+            FBLoginView()
         }
     }
 }
