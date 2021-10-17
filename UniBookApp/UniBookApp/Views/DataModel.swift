@@ -8,13 +8,17 @@
 import FirebaseDatabase
 import Foundation
 import GameKit
+import SwiftUI
 
 struct Book: Identifiable{
     var id = UUID()
     var name: String
     var authors: String
     var isbn: String
-    var bookCover: String // Change later
+    var bookCover: String
+    var price:String?
+    var comment: String?
+    var condition: String?// Change later
 }
 
 /*struct ISBNData: Decodable {
@@ -64,7 +68,6 @@ class DataModel: ObservableObject {
       messageHandleBooks = messageRefBooks.observe(.value, with: { snapshot in
           if let value = snapshot.childSnapshot(forPath: "Book1/authors").value as? String{
           self.message = value
-
         }
       })
     }
@@ -73,14 +76,37 @@ class DataModel: ObservableObject {
     func GetUserInfo() {
       //returns books with the ISBN for sale
       }
+    
     func SaveBookInfo(book:Book) {
-        var booksDict = ["name": book.name, "authors": book.authors, "isbn": book.isbn, "bookCover": book.bookCover, "id": book.id.uuidString]
-        messageRefBooks.child("Bok2").setValue(booksDict)
+        let booksDict = ["name": book.name, "authors": book.authors, "isbn": book.isbn, "bookCover": book.bookCover, "id": book.id.uuidString, "price": book.price, "comment": book.comment,"condition":book.condition]
+        messageRefBooks.child(book.id.uuidString).setValue(booksDict)
       }
+    
+    //Får ej att funka
+    /*func SaveImage(image: UIImage){
+        let storage = Storage.storage().reference()
+        
+        guard let imageData = image.pngData() else {
+            return
+        }
+        
+        storage.child("image/file.png").putData(imageData, metadata: nil) { _,error in
+            guard error == nil else{
+                print("failed to upload")
+                return
+            }
+            storage.child("image/file.png").downloadURL(completion: {url, error in
+                guard let url = url, error == nil else {
+                    return
+                }
+                let urlString = url.absoluteString
+                print("\(urlString)")
+            })
+        }
+    }*/
+    
     func DeleteBookForSale() {
       //returns books with the ISBN for sale
       }
-    }
-
-
+}
         

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var adViewModel: CreateAdViewModel
     var body: some View {
         VStack{
             TabView {
@@ -27,9 +28,11 @@ struct ContentView: View {
                 }
                 NavigationView {
                     ScrollView {
-                        //AdView()
+                        CreateAdView(adViewModel: adViewModel)
                     }
-                }
+                }.onDisappear(perform: {
+                    adViewModel.emptyArrays()
+                })
                     .tabItem {
                         Label("Add", systemImage: "plus")
                 }
@@ -45,8 +48,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+/*struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
-}
+}*/

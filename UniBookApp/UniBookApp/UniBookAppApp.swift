@@ -14,9 +14,10 @@ struct UniBookAppApp: App {
       FirebaseApp.configure()
     }
     var body: some Scene {
-        var model = DataModel()
+        let model = DataModel()
+        let adViewModel =  CreateAdViewModel(model: model)
         WindowGroup {
-            AdView(messageManager:model)
+            ContentView(adViewModel: adViewModel)
         }
     }
 }
