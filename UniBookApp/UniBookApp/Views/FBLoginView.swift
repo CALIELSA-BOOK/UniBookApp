@@ -59,34 +59,47 @@ struct FBLog : UIViewRepresentable {
     class Coordinator : NSObject, LoginButtonDelegate{
         
         var parent : FBLog
-        
+
         init(parent1 : FBLog){
             parent = parent1
         }
         
         func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+            let token = result?.token?.tokenString
+            
+            //getting user details
+            let request = GraphRequest(graphPath: "me", parameters: ["fields": "email, name"],
+                                       tokenString: token,
+                                       version: nil,
+                                       httpMethod: .get)
+            
+            request.start( completion: { connection, result, error in
+                print("\(result)")
+            })
             if error != nil{
                 print(error!.localizedDescription)
                 return
             }
             
-            if result!.isCancelled{
-                parent.logged = true
+//            if result!.isCancelled{
+//                parent.logged = true
+//
+//
+
                 
-                //getting user details
-                let request = GraphRequest(graphPath: "me", parameters: ["fields": "email"])
-                
-                request.start { (_, res, _) in
-                    //will return as dictionary
-                    guard let profileData = res as? [String : Any] else{return}
-                
-                    self.parent.email = profileData["email"] as! String
-                    //self.parent.name = profileData["name"] as! String
-                }
-            }
+//                request.start { (_, res, _) in
+//                    //will return as dictionary
+//                    guard let profileData = res as? [String : Any] else{return}
+//
+//                    self.parent.email = profileData["email"] as! String
+//                    //self.parent.name = profileData["name"] as! String
+//                }
+            //}
+            
         }
         
         func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+            //manager.logOut()
             parent.logged = false
             parent.email = ""
         }
