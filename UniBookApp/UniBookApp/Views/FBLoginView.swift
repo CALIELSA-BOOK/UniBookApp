@@ -24,11 +24,12 @@ struct Home : View {
     
     @AppStorage("logged") var logged = false
     @AppStorage("email") var email = ""
+    @AppStorage("name") var name = ""
     @State var manager = LoginManager()
     
     var body: some View{
         VStack(spacing: 25){
-            FBLog(logged: $logged, email: $email)
+            FBLog(logged: $logged, email: $email, name: $name)
                 .frame(height: 50)
                 .padding(.horizontal,35)
         }
@@ -47,7 +48,7 @@ struct FBLog : UIViewRepresentable {
     
     @Binding var logged : Bool
     @Binding var email : String
-    //@Binding var name : String
+    @Binding var name : String
     
     func makeUIView(context: Context) -> FBLoginButton {
         let button = FBLoginButton()
@@ -68,13 +69,18 @@ struct FBLog : UIViewRepresentable {
             let token = result?.token?.tokenString
             
             //getting user details
-            let request = GraphRequest(graphPath: "me", parameters: ["fields": "email, name"],
+            let request = GraphRequest(graphPath: "me", parameters: ["fields": "name, email, picture"],
                                        tokenString: token,
                                        version: nil,
                                        httpMethod: .get)
             
             request.start( completion: { connection, result, error in
-                print("\(result)")
+                print("\(String(describing: result))")
+                guard let profileData = result as? [String : Any] else{return}
+                print(profileData)
+                self.parent.name = profileData["name"] as! String
+                //self.parent.email = profileData["email"] as! String
+                //self.parent.name = profileData["name"] as! String
             })
             if error != nil{
                 print(error!.localizedDescription)
