@@ -26,7 +26,7 @@ struct Home : View {
     @AppStorage("email") var email = ""
     @AppStorage("username") var username: String = "Anonymous"
     @AppStorage("facebookID") var id = ""
-    @AppStorage("profilePic") var profilePic: String = "" //add default
+    @AppStorage("profilePic") var profilePic: String = ""
     @State var manager = LoginManager()
     
     var body: some View{
@@ -79,7 +79,6 @@ struct FBLog : UIViewRepresentable {
                                        httpMethod: .get)
             
             request.start( completion: { connection, result, error in
-                print("\(String(describing: result))")
                 guard let profileData = result as? [String : Any] else{return}
                 self.parent.username = profileData["name"] as! String
                 self.parent.id = profileData["id"] as! String
@@ -92,21 +91,6 @@ struct FBLog : UIViewRepresentable {
                 print(error!.localizedDescription)
                 return
             }
-            
-//            if result!.isCancelled{
-//                parent.logged = true
-//
-//
-
-                
-//                request.start { (_, res, _) in
-//                    //will return as dictionary
-//                    guard let profileData = res as? [String : Any] else{return}
-//
-//                    self.parent.email = profileData["email"] as! String
-//                    //self.parent.name = profileData["name"] as! String
-//                }
-            //}
             
         }
         
