@@ -16,11 +16,16 @@ struct FBLoginView: View {
     @AppStorage("profilePic") var profilePic: String = ""
     @State var manager = LoginManager()
     
+    @State private var isShowingDetails = false
+    
     var body: some View{
+        
         VStack(spacing: 25){
+            
             FBLog(logged: $logged, email: $email, username: $username, profilePic: $profilePic, id: $id)
                 .frame(height: 50)
                 .padding(.horizontal,35)
+
         }
     }
 }
@@ -30,5 +35,6 @@ struct FBLoginView_Previews: PreviewProvider {
         FBLoginView()
     }
 }
+
 
 
