@@ -8,16 +8,54 @@ import Foundation
 import SwiftUI
 import Combine
 
-class ISBNBookListViewModel: Identifiable, ObservableObject{
+class CreateAdViewModel: Identifiable, ObservableObject{
+    @ObservedObject private var dataModel: DataModel
     @Published var searchTerm: String = ""
-    @Published public private(set) var books: [ISBNBookViewModel] = []
+    @Published public var books: [ISBNBookViewModel] = []
+    @Published public var booksForAd: [Book] = []
+    @Published var images: [UIImage] = []
+    @Published var image: UIImage?
+    @Published var isbnView: Bool?
     private let isbnSource: ISBNSource = ISBNSource()
     private var disposables = Set<AnyCancellable>()
 
-    init(){
+    init(model: DataModel){
+        self.dataModel = model
         $searchTerm
           .sink(receiveValue: loadBook(searchTerm:))
           .store(in: &disposables)
+    }
+    
+    public func setSearchTerm(sTerm: String){
+        self.searchTerm = sTerm
+    }
+    
+    public func emptyArrays(){
+        self.books.removeAll()
+        self.booksForAd.removeAll()
+    }
+    
+    public func GetBooksForSale(){
+        self.dataModel.GetBooksForSale()
+    }
+    
+    public func convertAPIToBook(isbn: String){
+        let tempAuthors = self.books[0].authors.joined(separator: ", ")
+        let bookToAdd = Book(name: self.books[0].title,
+                             authors: tempAuthors,
+                             isbn: isbn,
+                             bookCover: "closed"
+        )
+        self.booksForAd.append(bookToAdd)
+        self.books.removeAll()
+    }
+    
+    public func CreateAd(price: String, bookComment: String, condition: String){
+        self.booksForAd[0].price = price
+        self.booksForAd[0].comment = bookComment
+        self.booksForAd[0].condition = condition
+        self.dataModel.SaveBookInfo(book: self.booksForAd[0])
+        
     }
  
     private func loadBook(searchTerm: String) {
@@ -45,6 +83,10 @@ class ISBNBookViewModel: Identifiable, ObservableObject{
         self.publishedDate = isbnData.items[0].volumeInfo.publishedDate
         self.language = isbnData.items[0].volumeInfo.language
     }
+}
+
+class ViewBool: ObservableObject {
+    @Published var viewBool = false;
 }
 
 /*Test in ContentView

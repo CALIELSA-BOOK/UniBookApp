@@ -33,8 +33,16 @@
 		32B868CA2702247400549EC7 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868C92702247400549EC7 /* BookViewModel.swift */; };
 		32B868D22708AF0000549EC7 /* PreviewAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868D12708AF0000549EC7 /* PreviewAdView.swift */; };
 		A35ACA692717122B0026F877 /* ISBNSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35ACA682717122B0026F877 /* ISBNSearchView.swift */; };
-		A35ACA6B2717122F0026F877 /* ISBNSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35ACA6A2717122F0026F877 /* ISBNSearchViewModel.swift */; };
 		A35ACA6D271712350026F877 /* ISBNSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35ACA6C271712350026F877 /* ISBNSource.swift */; };
+		A3ADEE32271ECE8400434D6D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A3ADEE31271ECE8400434D6D /* FirebaseAnalytics */; };
+		A3ADEE34271ECE8400434D6D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = A3ADEE33271ECE8400434D6D /* FirebaseDatabase */; };
+		A3ADEE36271ECE8400434D6D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A3ADEE35271ECE8400434D6D /* FirebaseStorage */; };
+		A3ADEE38271ECEEC00434D6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3ADEE37271ECEEC00434D6D /* GoogleService-Info.plist */; };
+		A3ADEE3A271ECF4100434D6D /* Firebase in Resources */ = {isa = PBXBuildFile; fileRef = A3ADEE39271ECF4100434D6D /* Firebase */; };
+		A3ADEE3C271ECF5000434D6D /* CreateAdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEE3B271ECF5000434D6D /* CreateAdViewModel.swift */; };
+		A3ADEE3E271ECF5900434D6D /* CreateAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEE3D271ECF5900434D6D /* CreateAdView.swift */; };
+		A3ADEE40271ECF6000434D6D /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEE3F271ECF6000434D6D /* DataModel.swift */; };
+		A3ADEE42271ED02700434D6D /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEE41271ED02700434D6D /* EmptyStateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,8 +92,13 @@
 		32B868C92702247400549EC7 /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
 		32B868D12708AF0000549EC7 /* PreviewAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewAdView.swift; sourceTree = "<group>"; };
 		A35ACA682717122B0026F877 /* ISBNSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISBNSearchView.swift; sourceTree = "<group>"; };
-		A35ACA6A2717122F0026F877 /* ISBNSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISBNSearchViewModel.swift; sourceTree = "<group>"; };
 		A35ACA6C271712350026F877 /* ISBNSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISBNSource.swift; sourceTree = "<group>"; };
+		A3ADEE37271ECEEC00434D6D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A3ADEE39271ECF4100434D6D /* Firebase */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Firebase; sourceTree = "<group>"; };
+		A3ADEE3B271ECF5000434D6D /* CreateAdViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAdViewModel.swift; sourceTree = "<group>"; };
+		A3ADEE3D271ECF5900434D6D /* CreateAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAdView.swift; sourceTree = "<group>"; };
+		A3ADEE3F271ECF6000434D6D /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		A3ADEE41271ED02700434D6D /* EmptyStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,9 +106,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3ADEE34271ECE8400434D6D /* FirebaseDatabase in Frameworks */,
 				09C5D8FE27173F3600D0E129 /* FacebookAEM in Frameworks */,
 				09C5D90027173F3800D0E129 /* FacebookBasics in Frameworks */,
 				09C5D8EF2717240300D0E129 /* FacebookLogin in Frameworks */,
+				A3ADEE36271ECE8400434D6D /* FirebaseStorage in Frameworks */,
+				A3ADEE32271ECE8400434D6D /* FirebaseAnalytics in Frameworks */,
 				09C5D8FC27173F1600D0E129 /* FacebookCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,6 +165,8 @@
 		09D572B526FA203C00583899 /* UniBookApp */ = {
 			isa = PBXGroup;
 			children = (
+				A3ADEE39271ECF4100434D6D /* Firebase */,
+				A3ADEE37271ECEEC00434D6D /* GoogleService-Info.plist */,
 				09C5D903271833B200D0E129 /* .gitignore */,
 				09D572B626FA203C00583899 /* UniBookAppApp.swift */,
 				32B868CB2702249600549EC7 /* Views */,
@@ -190,13 +208,16 @@
 		32B868CB2702249600549EC7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A3ADEE41271ED02700434D6D /* EmptyStateView.swift */,
 				09D572B826FA203C00583899 /* ContentView.swift */,
 				32B868C92702247400549EC7 /* BookViewModel.swift */,
 				32B868C126FF653D00549EC7 /* ImageUploadView.swift */,
 				32B868B926FF286100549EC7 /* AdView.swift */,
 				A35ACA682717122B0026F877 /* ISBNSearchView.swift */,
-				A35ACA6A2717122F0026F877 /* ISBNSearchViewModel.swift */,
+				A3ADEE3B271ECF5000434D6D /* CreateAdViewModel.swift */,
+				A3ADEE3D271ECF5900434D6D /* CreateAdView.swift */,
 				A35ACA6C271712350026F877 /* ISBNSource.swift */,
+				A3ADEE3F271ECF6000434D6D /* DataModel.swift */,
 				32B868D12708AF0000549EC7 /* PreviewAdView.swift */,
 				328F2E0127158EE1006CF628 /* ProfileView.swift */,
 				328F2DFD27120F39006CF628 /* HomeView.swift */,
@@ -239,6 +260,9 @@
 				09C5D8FB27173F1600D0E129 /* FacebookCore */,
 				09C5D8FD27173F3600D0E129 /* FacebookAEM */,
 				09C5D8FF27173F3800D0E129 /* FacebookBasics */,
+				A3ADEE31271ECE8400434D6D /* FirebaseAnalytics */,
+				A3ADEE33271ECE8400434D6D /* FirebaseDatabase */,
+				A3ADEE35271ECE8400434D6D /* FirebaseStorage */,
 			);
 			productName = UniBookApp;
 			productReference = 09D572B326FA203C00583899 /* UniBookApp.app */;
@@ -313,6 +337,7 @@
 			mainGroup = 09D572AA26FA203C00583899;
 			packageReferences = (
 				09C5D8ED2717240200D0E129 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				A3ADEE30271ECE8400434D6D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 09D572B426FA203C00583899 /* Products */;
 			projectDirPath = "";
@@ -330,7 +355,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3ADEE3A271ECF4100434D6D /* Firebase in Resources */,
 				09D572BE26FA204200583899 /* Preview Assets.xcassets in Resources */,
+				A3ADEE38271ECEEC00434D6D /* GoogleService-Info.plist in Resources */,
 				09C5D904271833B200D0E129 /* .gitignore in Resources */,
 				09D572BB26FA204200583899 /* Assets.xcassets in Resources */,
 			);
@@ -367,15 +394,18 @@
 				09C5D9022718292800D0E129 /* LoginOptionsView.swift in Sources */,
 				32B868C42701109400549EC7 /* ImagePicker.swift in Sources */,
 				09C5D8F12717265500D0E129 /* AppDelegate.swift in Sources */,
+				A3ADEE42271ED02700434D6D /* EmptyStateView.swift in Sources */,
 				09C5D906271836E500D0E129 /* StartPageView.swift in Sources */,
 				32B868C226FF653D00549EC7 /* ImageUploadView.swift in Sources */,
 				32B868CA2702247400549EC7 /* BookViewModel.swift in Sources */,
+				A3ADEE40271ECF6000434D6D /* DataModel.swift in Sources */,
 				09C5D8F3271726DE00D0E129 /* FBLoginView.swift in Sources */,
 				09D572B926FA203C00583899 /* ContentView.swift in Sources */,
-				A35ACA6B2717122F0026F877 /* ISBNSearchViewModel.swift in Sources */,
 				328F2E002713655F006CF628 /* BookItemView.swift in Sources */,
+				A3ADEE3E271ECF5900434D6D /* CreateAdView.swift in Sources */,
 				09D572B726FA203C00583899 /* UniBookAppApp.swift in Sources */,
 				A35ACA692717122B0026F877 /* ISBNSearchView.swift in Sources */,
+				A3ADEE3C271ECF5000434D6D /* CreateAdViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,6 +731,14 @@
 				kind = branch;
 			};
 		};
+		A3ADEE30271ECE8400434D6D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -723,6 +761,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 09C5D8ED2717240200D0E129 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookBasics;
+		};
+		A3ADEE31271ECE8400434D6D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3ADEE30271ECE8400434D6D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		A3ADEE33271ECE8400434D6D /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3ADEE30271ECE8400434D6D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		A3ADEE35271ECE8400434D6D /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3ADEE30271ECE8400434D6D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
