@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		090F85C7271EC4F400B9B9CC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090F85C6271EC4F400B9B9CC /* LoginViewModel.swift */; };
 		09C5D8EF2717240300D0E129 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 09C5D8EE2717240300D0E129 /* FacebookLogin */; };
 		09C5D8F12717265500D0E129 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D8F02717265500D0E129 /* AppDelegate.swift */; };
 		09C5D8F3271726DE00D0E129 /* FBLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D8F2271726DE00D0E129 /* FBLoginView.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		090F85C6271EC4F400B9B9CC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		09C5D8F02717265500D0E129 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09C5D8F2271726DE00D0E129 /* FBLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginView.swift; sourceTree = "<group>"; };
 		09C5D8F927173C1600D0E129 /* facebook-ios-sdk */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "facebook-ios-sdk"; path = "/Users/saradamne/Library/Developer/Xcode/DerivedData/UniBookApp-crwothsbqchmbqdevmnalbgibdyk/SourcePackages/checkouts/facebook-ios-sdk"; sourceTree = "<absolute>"; };
@@ -204,6 +206,7 @@
 				09C5D8F2271726DE00D0E129 /* FBLoginView.swift */,
 				09C5D9012718292800D0E129 /* LoginOptionsView.swift */,
 				09C5D905271836E500D0E129 /* StartPageView.swift */,
+				090F85C6271EC4F400B9B9CC /* LoginViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				328F2E002713655F006CF628 /* BookItemView.swift in Sources */,
 				09D572B726FA203C00583899 /* UniBookAppApp.swift in Sources */,
 				A35ACA692717122B0026F877 /* ISBNSearchView.swift in Sources */,
+				090F85C7271EC4F400B9B9CC /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

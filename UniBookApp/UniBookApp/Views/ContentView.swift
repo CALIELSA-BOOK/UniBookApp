@@ -5,8 +5,7 @@
 //  Created by Sara Damne on 2021-09-21.
 //
 
-import SwiftUI
-import FBSDKLoginKit
+import SwiftUI 
 
 struct ContentView: View {
     
