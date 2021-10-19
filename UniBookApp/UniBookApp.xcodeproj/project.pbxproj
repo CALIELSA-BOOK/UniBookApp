@@ -43,6 +43,8 @@
 		A3ADEE3E271ECF5900434D6D /* CreateAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEE3D271ECF5900434D6D /* CreateAdView.swift */; };
 		A3ADEE40271ECF6000434D6D /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEE3F271ECF6000434D6D /* DataModel.swift */; };
 		A3ADEE42271ED02700434D6D /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEE41271ED02700434D6D /* EmptyStateView.swift */; };
+		A3ADEE44271EEDCA00434D6D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEE43271EEDCA00434D6D /* SearchView.swift */; };
+		A3ADEE48271EEDFA00434D6D /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ADEE47271EEDFA00434D6D /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,8 @@
 		A3ADEE3D271ECF5900434D6D /* CreateAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAdView.swift; sourceTree = "<group>"; };
 		A3ADEE3F271ECF6000434D6D /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		A3ADEE41271ED02700434D6D /* EmptyStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		A3ADEE43271EEDCA00434D6D /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		A3ADEE47271EEDFA00434D6D /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +229,8 @@
 				09C5D8F2271726DE00D0E129 /* FBLoginView.swift */,
 				09C5D9012718292800D0E129 /* LoginOptionsView.swift */,
 				09C5D905271836E500D0E129 /* StartPageView.swift */,
+				A3ADEE43271EEDCA00434D6D /* SearchView.swift */,
+				A3ADEE47271EEDFA00434D6D /* SearchViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -397,10 +403,12 @@
 				A3ADEE42271ED02700434D6D /* EmptyStateView.swift in Sources */,
 				09C5D906271836E500D0E129 /* StartPageView.swift in Sources */,
 				32B868C226FF653D00549EC7 /* ImageUploadView.swift in Sources */,
+				A3ADEE44271EEDCA00434D6D /* SearchView.swift in Sources */,
 				32B868CA2702247400549EC7 /* BookViewModel.swift in Sources */,
 				A3ADEE40271ECF6000434D6D /* DataModel.swift in Sources */,
 				09C5D8F3271726DE00D0E129 /* FBLoginView.swift in Sources */,
 				09D572B926FA203C00583899 /* ContentView.swift in Sources */,
+				A3ADEE48271EEDFA00434D6D /* SearchViewModel.swift in Sources */,
 				328F2E002713655F006CF628 /* BookItemView.swift in Sources */,
 				A3ADEE3E271ECF5900434D6D /* CreateAdView.swift in Sources */,
 				09D572B726FA203C00583899 /* UniBookAppApp.swift in Sources */,

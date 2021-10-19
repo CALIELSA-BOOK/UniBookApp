@@ -10,6 +10,7 @@ import FBSDKLoginKit
 
 struct ContentView: View {
     @ObservedObject var adViewModel: CreateAdViewModel
+    @ObservedObject var searchViewModel: SearchViewModel
     var body: some View {
 
         if (!UserDefaults.standard.bool(forKey: "logged")) {
@@ -27,9 +28,11 @@ struct ContentView: View {
                             Label("Home", systemImage: "homekit")
                     }
                     NavigationView {
-                        Text("Search")
+                        SearchView(searchViewModel: searchViewModel)
                             .navigationTitle("Search")
-                    }
+                    }.onAppear(perform:{
+                        adViewModel.GetBooksForSale()
+                    })
                         .tabItem {
                             Label("Search", systemImage: "magnifyingglass")
                     }
