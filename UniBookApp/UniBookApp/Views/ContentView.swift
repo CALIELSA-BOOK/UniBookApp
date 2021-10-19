@@ -11,8 +11,9 @@ import FBSDKLoginKit
 struct ContentView: View {
     @ObservedObject var adViewModel: CreateAdViewModel
     @ObservedObject var searchViewModel: SearchViewModel
+    @State var loadData: Bool = false
     var body: some View {
-
+        
         if (!UserDefaults.standard.bool(forKey: "logged")) {
             NavigationView{
                 StartPageView()
@@ -23,33 +24,36 @@ struct ContentView: View {
                     NavigationView {
                         HomeView()
                             .navigationBarTitle("Welcome")
-                    }
+                    }.onAppear(perform:{
+                        if self.loadData == false{
+                            adViewModel.GetBooksForSale()
+                            self.loadData = true
+                        }
+                    })
                         .tabItem {
                             Label("Home", systemImage: "homekit")
-                    }
+                        }
                     NavigationView {
                         SearchView(searchViewModel: searchViewModel)
                             .navigationTitle("Search")
-                    }.onAppear(perform:{
-                        adViewModel.GetBooksForSale()
-                    })
+                    }.onDisappear(perform: {searchViewModel.emptyArray()})
                         .tabItem {
                             Label("Search", systemImage: "magnifyingglass")
-                    }
+                        }
                     NavigationView {
                         ScrollView {
                             CreateAdView(adViewModel: adViewModel)
                         }
                     }
-                        .tabItem {
-                            Label("Add", systemImage: "plus")
+                    .tabItem {
+                        Label("Add", systemImage: "plus")
                     }
                     NavigationView {
                         ProfileView()
                             .navigationTitle("Profile")
                     }
-                        .tabItem {
-                            Label("Profile", systemImage: "person.crop.circle")
+                    .tabItem {
+                        Label("Profile", systemImage: "person.crop.circle")
                     }
                 }
             }
@@ -58,7 +62,7 @@ struct ContentView: View {
 }
 
 /*struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}*/
+ static var previews: some View {
+ ContentView()
+ }
+ }*/
