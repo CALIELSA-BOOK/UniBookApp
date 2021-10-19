@@ -20,7 +20,7 @@ struct UniBookAppApp: App {
         let dataModel = DataModel()
         let adViewModel = CreateAdViewModel(model: dataModel)
         WindowGroup {
-            ContentView()
+            ContentView(adViewModel: adViewModel)
         }
     }
 }
