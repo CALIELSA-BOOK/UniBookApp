@@ -24,12 +24,12 @@ struct Home : View {
     
     @AppStorage("logged") var logged = false
     @AppStorage("email") var email = ""
-    @AppStorage("name") var name = ""
+    @AppStorage("username") var username: String = "Anonymous"
     @State var manager = LoginManager()
     
     var body: some View{
         VStack(spacing: 25){
-            FBLog(logged: $logged, email: $email, name: $name)
+            FBLog(logged: $logged, email: $email, username: $username)
                 .frame(height: 50)
                 .padding(.horizontal,35)
         }
@@ -48,7 +48,7 @@ struct FBLog : UIViewRepresentable {
     
     @Binding var logged : Bool
     @Binding var email : String
-    @Binding var name : String
+    @Binding var username : String
     
     func makeUIView(context: Context) -> FBLoginButton {
         let button = FBLoginButton()
@@ -78,7 +78,7 @@ struct FBLog : UIViewRepresentable {
                 print("\(String(describing: result))")
                 guard let profileData = result as? [String : Any] else{return}
                 print(profileData)
-                self.parent.name = profileData["name"] as! String
+                self.parent.username = profileData["name"] as! String
                 //self.parent.email = profileData["email"] as! String
                 //self.parent.name = profileData["name"] as! String
             })

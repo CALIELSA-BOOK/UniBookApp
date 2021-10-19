@@ -20,8 +20,7 @@ struct ProfileView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 100, height: 100)
-                    // Change to Username
-                    Text("Name Surname")
+                    Text(UserDefaults.standard.string(forKey: "username") ?? "Anonymous")
                         .font(.largeTitle)
                 }
                 NavigationLink(destination: Text("Comming soon")){
