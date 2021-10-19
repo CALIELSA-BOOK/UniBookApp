@@ -32,6 +32,7 @@ struct ProfileView: View {
             }
 
             FBLoginView()
+            
         }
     }
 }
