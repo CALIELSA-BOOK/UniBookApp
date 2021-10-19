@@ -22,7 +22,7 @@ struct UniBookAppApp: App {
         let searchViewModel = SearchViewModel(model: dataModel)
         let homeViewModel = HomeViewModel(model: dataModel)
         WindowGroup {
-            ContentView(adViewModel: adViewModel,searchViewModel: searchViewModel, homeViewModel: homeViewModel)
+            ContentView(adViewModel: adViewModel,homeViewModel: homeViewModel, searchViewModel: searchViewModel)
         }
     }
 }

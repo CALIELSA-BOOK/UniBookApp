@@ -33,14 +33,18 @@ struct HomeView: View {
                     .font(.system(size: 20.0, weight: .bold))
                     .padding(.top)
                 ScrollView{
-                    BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: 230)
-                        .padding(.bottom,geometry.size.height * 0.10)
-                    BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: 340)
-                        .padding(.bottom,geometry.size.height * 0.10)
-                    BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: 500)
-                        .padding(.bottom,geometry.size.height * 0.10)
-                    BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: 320)
-                        .padding(.bottom,geometry.size.height * 0.10)
+                    ForEach (homeViewModel.bookResult, id: \.self){
+                        book in 
+                        BookItemView(booktitle: book.name, bookauthor: book.authors, bookISBN: book.isbn, bookPrice: 10)
+                    }
+//                    BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: 230)
+//                        .padding(.bottom,geometry.size.height * 0.10)
+//                    BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: 340)
+//                        .padding(.bottom,geometry.size.height * 0.10)
+//                    BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: 500)
+//                        .padding(.bottom,geometry.size.height * 0.10)
+//                    BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: 320)
+//                        .padding(.bottom,geometry.size.height * 0.10)
                 }
             }
         }
