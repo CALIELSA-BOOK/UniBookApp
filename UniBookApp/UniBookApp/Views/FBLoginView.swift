@@ -98,6 +98,9 @@ struct FBLog : UIViewRepresentable {
             //manager.logOut()
             parent.logged = false
             parent.email = ""
+            parent.username = ""
+            parent.profilePic = ""
+            parent.id = ""
         }
     }
 }
