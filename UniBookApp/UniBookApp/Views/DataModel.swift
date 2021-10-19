@@ -10,7 +10,7 @@ import Foundation
 import GameKit
 import SwiftUI
 
-struct Book: Identifiable{
+struct Book: Identifiable, Hashable{
     var id = UUID()
     var name: String
     var authors: String
