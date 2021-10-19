@@ -25,11 +25,12 @@ struct Home : View {
     @AppStorage("logged") var logged = false
     @AppStorage("email") var email = ""
     @AppStorage("username") var username: String = "Anonymous"
+    @AppStorage("profilePic") var profilePic: String = "" //add default
     @State var manager = LoginManager()
     
     var body: some View{
         VStack(spacing: 25){
-            FBLog(logged: $logged, email: $email, username: $username)
+            FBLog(logged: $logged, email: $email, username: $username, profilePic: $profilePic)
                 .frame(height: 50)
                 .padding(.horizontal,35)
         }
@@ -49,6 +50,7 @@ struct FBLog : UIViewRepresentable {
     @Binding var logged : Bool
     @Binding var email : String
     @Binding var username : String
+    @Binding var profilePic : String
     
     func makeUIView(context: Context) -> FBLoginButton {
         let button = FBLoginButton()
@@ -77,10 +79,11 @@ struct FBLog : UIViewRepresentable {
             request.start( completion: { connection, result, error in
                 print("\(String(describing: result))")
                 guard let profileData = result as? [String : Any] else{return}
-                print(profileData)
                 self.parent.username = profileData["name"] as! String
+                if let imageURL = ((profileData["picture"] as? [String: Any])?["data"] as? [String: Any])?["url"] as? String {
+                    self.parent.profilePic = imageURL
+                    }
                 //self.parent.email = profileData["email"] as! String
-                //self.parent.name = profileData["name"] as! String
             })
             if error != nil{
                 print(error!.localizedDescription)

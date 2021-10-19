@@ -15,11 +15,12 @@ struct ProfileView: View {
             List{
                 HStack{
                     //Facebook profile picture
-                    Image(systemName: "person.crop.circle")
-                        .renderingMode(.original)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 100, height: 100)
+                    if #available(iOS 15.0, *) {
+                        AsyncImage(url: URL(string: UserDefaults.standard.string(forKey: "profilePic") ?? "https://robohash.org/hello" ))
+                            .frame(width: 100, height: 100)
+                    } else {
+                        // Fallback on earlier versions
+                    }
                     Text(UserDefaults.standard.string(forKey: "username") ?? "Anonymous")
                         .font(.largeTitle)
                 }
