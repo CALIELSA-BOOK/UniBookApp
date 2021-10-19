@@ -10,6 +10,7 @@ import FBSDKLoginKit
 
 struct ContentView: View {
     @ObservedObject var adViewModel: CreateAdViewModel
+    @ObservedObject var homeViewModel: HomeViewModel
     var body: some View {
 
         if (!UserDefaults.standard.bool(forKey: "logged")) {
@@ -20,7 +21,7 @@ struct ContentView: View {
             VStack{
                 TabView {
                     NavigationView {
-                        HomeView()
+                        HomeView(homeViewModel: homeViewModel)
                             .navigationBarTitle("Welcome")
                     }
                         .tabItem {

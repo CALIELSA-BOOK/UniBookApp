@@ -19,8 +19,9 @@ struct UniBookAppApp: App {
     var body: some Scene {
         let dataModel = DataModel()
         let adViewModel = CreateAdViewModel(model: dataModel)
+        let homeViewModel = HomeViewModel(model: dataModel)
         WindowGroup {
-            ContentView(adViewModel: adViewModel)
+            ContentView(adViewModel: adViewModel, homeViewModel: homeViewModel)
         }
     }
 }

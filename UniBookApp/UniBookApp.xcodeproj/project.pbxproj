@@ -32,6 +32,7 @@
 		32B868C42701109400549EC7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868C32701109400549EC7 /* ImagePicker.swift */; };
 		32B868CA2702247400549EC7 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868C92702247400549EC7 /* BookViewModel.swift */; };
 		32B868D22708AF0000549EC7 /* PreviewAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868D12708AF0000549EC7 /* PreviewAdView.swift */; };
+		32DDF44F271EF8FF006B26B6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DDF44E271EF8FF006B26B6 /* HomeViewModel.swift */; };
 		A35ACA692717122B0026F877 /* ISBNSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35ACA682717122B0026F877 /* ISBNSearchView.swift */; };
 		A35ACA6D271712350026F877 /* ISBNSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35ACA6C271712350026F877 /* ISBNSource.swift */; };
 		A3ADEE32271ECE8400434D6D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A3ADEE31271ECE8400434D6D /* FirebaseAnalytics */; };
@@ -91,6 +92,7 @@
 		32B868C32701109400549EC7 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		32B868C92702247400549EC7 /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
 		32B868D12708AF0000549EC7 /* PreviewAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewAdView.swift; sourceTree = "<group>"; };
+		32DDF44E271EF8FF006B26B6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A35ACA682717122B0026F877 /* ISBNSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISBNSearchView.swift; sourceTree = "<group>"; };
 		A35ACA6C271712350026F877 /* ISBNSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISBNSource.swift; sourceTree = "<group>"; };
 		A3ADEE37271ECEEC00434D6D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				09C5D8F2271726DE00D0E129 /* FBLoginView.swift */,
 				09C5D9012718292800D0E129 /* LoginOptionsView.swift */,
 				09C5D905271836E500D0E129 /* StartPageView.swift */,
+				32DDF44E271EF8FF006B26B6 /* HomeViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				32B868BE26FF354F00549EC7 /* SearchbarView.swift in Sources */,
 				328F2E0227158EE1006CF628 /* ProfileView.swift in Sources */,
 				32B868D22708AF0000549EC7 /* PreviewAdView.swift in Sources */,
+				32DDF44F271EF8FF006B26B6 /* HomeViewModel.swift in Sources */,
 				328F2DFE27120F39006CF628 /* HomeView.swift in Sources */,
 				32B868C026FF643200549EC7 /* BookInformationView.swift in Sources */,
 				09C5D9022718292800D0E129 /* LoginOptionsView.swift in Sources */,

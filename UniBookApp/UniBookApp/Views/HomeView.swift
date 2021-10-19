@@ -8,17 +8,12 @@
 import SwiftUI
 
 struct HomeView: View {
+    @ObservedObject var homeViewModel: HomeViewModel
     @State private var searchText = ""
     
     var body: some View {
         GeometryReader{ geometry in
         VStack{
-            if #available(iOS 15.0, *) {
-                Text("")
-                   .searchable(text: $searchText, prompt: "Seach for Book")
-            } else {
-                // Fallback on earlier versions
-            }
             ZStack{
                Rectangle()
                     .fill(Color(red: 25/255, green: 85/255, blue: 166/255))
@@ -53,15 +48,14 @@ struct HomeView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
+//struct HomeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeView()
+//    }
+//}
 
 
 struct PreviewPopularBooksView: View {
-    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 20) {
