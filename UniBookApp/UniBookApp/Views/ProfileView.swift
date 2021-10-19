@@ -14,14 +14,13 @@ struct ProfileView: View {
         VStack{
             List{
                 HStack{
-                    //Facebook profile picture
-                    Image(systemName: "person.crop.circle")
-                        .renderingMode(.original)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 100, height: 100)
-                    // Change to Username
-                    Text("Name Surname")
+                    if #available(iOS 15.0, *) {
+                        AsyncImage(url: URL(string: UserDefaults.standard.string(forKey: "profilePic") ?? "https://robohash.org/hello" ))
+                            .frame(width: 100, height: 100)
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                    Text(UserDefaults.standard.string(forKey: "username") ?? "Anonymous")
                         .font(.largeTitle)
                 }
                 NavigationLink(destination: Text("Comming soon")){
@@ -30,11 +29,8 @@ struct ProfileView: View {
                 NavigationLink(destination: Text("My Published Ads")){
                     Text("My Ads")
                 }
-                NavigationLink(destination: AdView()){
-                    Text("1")
-                }
             }
-            //FIX so that user is logged out when pressing button
+
             FBLoginView()
         }
     }
