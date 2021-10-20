@@ -16,7 +16,7 @@ struct CreateAdView: View {
     @StateObject var isbnView = ViewBool()
     var arrayOfConditions = ["New","Good","Fair","Poor"]
     // @ObservedObject var viewModel = BookViewModel() -- > Could work like this later
-    var booksNew = Book(id: UUID(),name: "Calculus", authors: "Pelle, Calle", isbn: "123456789", bookCover: "book.closed")
+    //var booksNew = Book(id: UUID(),name: "Calculus", authors: "Pelle, Calle", isbn: "123456789", bookCover: "book.closed")
     
     var body: some View {
         VStack{

@@ -33,6 +33,9 @@
 		32B868C42701109400549EC7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868C32701109400549EC7 /* ImagePicker.swift */; };
 		32B868CA2702247400549EC7 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868C92702247400549EC7 /* BookViewModel.swift */; };
 		32B868D22708AF0000549EC7 /* PreviewAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868D12708AF0000549EC7 /* PreviewAdView.swift */; };
+		A3078A432720AC0A0052D477 /* MyAdsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3078A422720AC0A0052D477 /* MyAdsView.swift */; };
+		A32A52E0272081B800317CAA /* DisplayAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32A52DF272081B800317CAA /* DisplayAdView.swift */; };
+		A32A52E32720831400317CAA /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A32A52E22720831400317CAA /* SDWebImageSwiftUI */; };
 		A35ACA692717122B0026F877 /* ISBNSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35ACA682717122B0026F877 /* ISBNSearchView.swift */; };
 		A35ACA6D271712350026F877 /* ISBNSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35ACA6C271712350026F877 /* ISBNSource.swift */; };
 		A3ADEE32271ECE8400434D6D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A3ADEE31271ECE8400434D6D /* FirebaseAnalytics */; };
@@ -95,6 +98,8 @@
 		32B868C32701109400549EC7 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		32B868C92702247400549EC7 /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
 		32B868D12708AF0000549EC7 /* PreviewAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewAdView.swift; sourceTree = "<group>"; };
+		A3078A422720AC0A0052D477 /* MyAdsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdsView.swift; sourceTree = "<group>"; };
+		A32A52DF272081B800317CAA /* DisplayAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAdView.swift; sourceTree = "<group>"; };
 		A35ACA682717122B0026F877 /* ISBNSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISBNSearchView.swift; sourceTree = "<group>"; };
 		A35ACA6C271712350026F877 /* ISBNSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISBNSource.swift; sourceTree = "<group>"; };
 		A3ADEE37271ECEEC00434D6D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -116,6 +121,7 @@
 				09C5D8FE27173F3600D0E129 /* FacebookAEM in Frameworks */,
 				09C5D90027173F3800D0E129 /* FacebookBasics in Frameworks */,
 				09C5D8EF2717240300D0E129 /* FacebookLogin in Frameworks */,
+				A32A52E32720831400317CAA /* SDWebImageSwiftUI in Frameworks */,
 				A3ADEE36271ECE8400434D6D /* FirebaseStorage in Frameworks */,
 				A3ADEE32271ECE8400434D6D /* FirebaseAnalytics in Frameworks */,
 				09C5D8FC27173F1600D0E129 /* FacebookCore in Frameworks */,
@@ -234,6 +240,8 @@
 				090F85C6271EC4F400B9B9CC /* LoginViewModel.swift */,
 				A3ADEE43271EEDCA00434D6D /* SearchView.swift */,
 				A3ADEE47271EEDFA00434D6D /* SearchViewModel.swift */,
+				A32A52DF272081B800317CAA /* DisplayAdView.swift */,
+				A3078A422720AC0A0052D477 /* MyAdsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,6 +280,7 @@
 				A3ADEE31271ECE8400434D6D /* FirebaseAnalytics */,
 				A3ADEE33271ECE8400434D6D /* FirebaseDatabase */,
 				A3ADEE35271ECE8400434D6D /* FirebaseStorage */,
+				A32A52E22720831400317CAA /* SDWebImageSwiftUI */,
 			);
 			productName = UniBookApp;
 			productReference = 09D572B326FA203C00583899 /* UniBookApp.app */;
@@ -347,6 +356,7 @@
 			packageReferences = (
 				09C5D8ED2717240200D0E129 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 				A3ADEE30271ECE8400434D6D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A32A52E12720831400317CAA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 09D572B426FA203C00583899 /* Products */;
 			projectDirPath = "";
@@ -393,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A32A52E0272081B800317CAA /* DisplayAdView.swift in Sources */,
 				A35ACA6D271712350026F877 /* ISBNSource.swift in Sources */,
 				32B868BA26FF286100549EC7 /* AdView.swift in Sources */,
 				32B868BE26FF354F00549EC7 /* SearchbarView.swift in Sources */,
@@ -405,6 +416,7 @@
 				09C5D8F12717265500D0E129 /* AppDelegate.swift in Sources */,
 				A3ADEE42271ED02700434D6D /* EmptyStateView.swift in Sources */,
 				09C5D906271836E500D0E129 /* StartPageView.swift in Sources */,
+				A3078A432720AC0A0052D477 /* MyAdsView.swift in Sources */,
 				32B868C226FF653D00549EC7 /* ImageUploadView.swift in Sources */,
 				A3ADEE44271EEDCA00434D6D /* SearchView.swift in Sources */,
 				32B868CA2702247400549EC7 /* BookViewModel.swift in Sources */,
@@ -743,6 +755,14 @@
 				kind = branch;
 			};
 		};
+		A32A52E12720831400317CAA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		A3ADEE30271ECE8400434D6D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -773,6 +793,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 09C5D8ED2717240200D0E129 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookBasics;
+		};
+		A32A52E22720831400317CAA /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A32A52E12720831400317CAA /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 		A3ADEE31271ECE8400434D6D /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
