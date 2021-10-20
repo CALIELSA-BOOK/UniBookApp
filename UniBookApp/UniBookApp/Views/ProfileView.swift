@@ -32,6 +32,7 @@ struct ProfileView: View {
             }
 
             FBLoginView()
+            
         }
     }
 }
@@ -40,4 +41,4 @@ struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
     }
-}
+ }

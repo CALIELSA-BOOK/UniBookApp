@@ -5,23 +5,22 @@
 //  Created by Sara Damne on 2021-09-21.
 //
 
-import SwiftUI
-import FBSDKLoginKit
+import SwiftUI 
 
 struct ContentView: View {
+    @AppStorage("logged") var logged = false
     @ObservedObject var adViewModel: CreateAdViewModel
     @ObservedObject var searchViewModel: SearchViewModel
     @State var loadData: Bool = false
+  
     var body: some View {
-        
-        if (!UserDefaults.standard.bool(forKey: "logged")) {
-            NavigationView{
+
+        if (!logged) {
                 StartPageView()
-            }
         }else{
             VStack{
                 TabView {
-                    NavigationView {
+                   NavigationView {
                         HomeView()
                             .navigationBarTitle("Welcome")
                     }.onAppear(perform:{
@@ -60,9 +59,3 @@ struct ContentView: View {
         }
     }
 }
-
-/*struct ContentView_Previews: PreviewProvider {
- static var previews: some View {
- ContentView()
- }
- }*/

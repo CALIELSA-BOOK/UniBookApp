@@ -24,18 +24,7 @@ struct StartPageView: View {
                 .shadow(radius:70)
                 .padding()
            
-            //PrimaryButton()
-            NavigationLink(destination: LoginOptionsView(), isActive: $isShowingDetails){
-                Button("Let's go")
-                    {
-                        self.isShowingDetails = true
-                    }
-                    .foregroundColor(.white)
-                    .padding(.all)
-                    .frame(width: 250, height: 50)
-                    .background(Color(red: 25/255, green: 85/255, blue: 166/255))
-                    .cornerRadius(16)
-            }
+            FBLoginView()
         }
     }
 }
@@ -46,14 +35,3 @@ struct StartPageView_Previews: PreviewProvider {
     }
 }
 
-struct PrimaryButton: View {
-    var body: some View {
-        Text("Let's Go")
-            .font(.title)
-            .foregroundColor(.white)
-            .frame(maxWidth: 200)//200?
-            .padding()
-            .background(Color(red: 25/255, green: 85/255, blue: 166/255))
-            .cornerRadius(50)
-    }
-}
