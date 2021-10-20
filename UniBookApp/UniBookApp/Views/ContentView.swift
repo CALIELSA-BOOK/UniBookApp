@@ -28,6 +28,7 @@ struct ContentView: View {
                     }.onAppear(perform:{
                         if self.loadData == false{
                             adViewModel.GetBooksForSale()
+                            homeViewModel.getRandomBooks()
                             self.loadData = true
                         }
                     })
