@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     @State private var isShowingDetails = false
-    
+
     var body: some View {
         VStack{
             List{
@@ -32,6 +32,13 @@ struct ProfileView: View {
             }
 
             FBLoginView()
+
         }
     }
 }
+
+struct ProfileView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfileView()
+    }
+ }

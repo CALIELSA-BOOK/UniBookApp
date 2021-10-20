@@ -6,19 +6,18 @@
 //
 
 import SwiftUI
-import FBSDKLoginKit
 
 struct ContentView: View {
+    @AppStorage("logged") var logged = false
     @ObservedObject var adViewModel: CreateAdViewModel
     @ObservedObject var homeViewModel: HomeViewModel
     @ObservedObject var searchViewModel: SearchViewModel
     @State var loadData: Bool = false
+
     var body: some View {
 
-        if (!UserDefaults.standard.bool(forKey: "logged")) {
-            NavigationView{
+        if (!logged) {
                 StartPageView()
-            }
         }else{
             VStack{
                 TabView {
