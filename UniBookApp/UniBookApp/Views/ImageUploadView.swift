@@ -11,7 +11,7 @@ import UIKit
 /** Add the camera functionality here later **/
 
 struct ImageUploadView: View {
-    
+    @ObservedObject var adViewModel: CreateAdViewModel
     @State private var isShowPhotoLibrary = false
     @State private var image = UIImage()
     
@@ -46,6 +46,7 @@ struct ImageUploadView: View {
                     Button(action: {
                         self.isShowPhotoLibrary = false
                         self.activeImage = false
+                        adViewModel.images.removeAll()
                     }) {
                         Image(systemName: "multiply.square.fill")
                             .renderingMode(.original)
@@ -59,13 +60,7 @@ struct ImageUploadView: View {
             }
         }
         .sheet(isPresented: $isShowPhotoLibrary) {
-            ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
+            ImagePicker(adViewModel:adViewModel, sourceType: .photoLibrary, selectedImage: self.$image)
         }
-    }
-}
-
-struct ImageUploadView_Previews: PreviewProvider {
-    static var previews: some View {
-        ImageUploadView()
     }
 }

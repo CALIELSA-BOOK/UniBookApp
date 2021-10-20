@@ -29,10 +29,12 @@ class CreateAdViewModel: Identifiable, ObservableObject{
     public func setSearchTerm(sTerm: String){
         self.searchTerm = sTerm
     }
-    
+
     public func emptyArrays(){
         self.books.removeAll()
         self.booksForAd.removeAll()
+        self.images.removeAll()
+        dataModel.booksForSale.removeAll()
     }
     
     public func GetBooksForSale(){
@@ -56,8 +58,13 @@ class CreateAdViewModel: Identifiable, ObservableObject{
         self.booksForAd[0].condition = condition
         self.dataModel.SaveBookInfo(book: self.booksForAd[0])
         
+            images.forEach({ image in
+                self.saveImage(image: image, id: booksForAd[0].id.uuidString)
+            })
+        self.emptyArrays();
+        self.GetBooksForSale()
     }
- 
+                           
     private func loadBook(searchTerm: String) {
       books.removeAll()
         isbnSource.getBookInfo(isbn: searchTerm) {book in
@@ -66,6 +73,9 @@ class CreateAdViewModel: Identifiable, ObservableObject{
                   self.books.append(isbnBookViewModel)
               }
         }
+    }
+    public func saveImage(image: UIImage,id:String){
+        dataModel.SaveImage(image: image, id: id)
     }
 }
 
@@ -88,15 +98,3 @@ class ISBNBookViewModel: Identifiable, ObservableObject{
 class ViewBool: ObservableObject {
     @Published var viewBool = false;
 }
-
-/*Test in ContentView
- @ObservedObject var viewModel: ISBNBookListViewModel
- 
- Inside view:
- SearchBar(searchTerm: $viewModel.searchTerm)
- if viewModel.books.isEmpty {
-   EmptyStateView()
- } else {
-     ISBNSearchView(tempBook: viewModel.books[0])
- }
- */

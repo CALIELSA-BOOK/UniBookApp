@@ -6,6 +6,7 @@
 //
 //
 import FirebaseDatabase
+import FirebaseStorage
 import Foundation
 import GameKit
 import SwiftUI
@@ -19,25 +20,9 @@ struct Book: Identifiable, Hashable{
     var price:String?
     var comment: String?
     var condition: String?
-    var seller: String?// Change later
+    var seller: String?
+    var imageURL: String?// Change later
 }
-
-/*struct ISBNData: Decodable {
- var items: [BookData]
- }
- 
- struct BookData: Decodable {
- let id: String
- let volumeInfo: VolumeInfo
- }
- 
- struct VolumeInfo: Decodable {
- let title: String
- let authors: [String]
- let publishedDate: String
- let language: String
- }
- */
 class DataModel: ObservableObject {
     @Published var message: String = "fetching"
     @Published var userName: String = "Email"
@@ -75,10 +60,11 @@ class DataModel: ObservableObject {
                 
                 self.booksForSale.append(Book(name:bookData["name"] as! String,
                                               authors:bookData["authors"] as! String,
+                                              
                                               isbn:bookData["isbn"] as! String,
                                               bookCover:bookData["bookCover"] as! String,
                                               price:bookData["price"] as? String ?? "",
-                                              seller:bookData["seller"] as? String ?? ""))
+                                              seller:bookData["seller"] as? String ?? "",imageURL:bookData["imageURL"] as? String ?? ""))
             }
         }
         );
@@ -89,27 +75,27 @@ class DataModel: ObservableObject {
         messageRefBooks.child(book.id.uuidString).setValue(booksDict)
     }
     
-    //Får ej att funka för bilder
-    /*func SaveImage(image: UIImage){
-     let storage = Storage.storage().reference()
-     
-     guard let imageData = image.pngData() else {
-     return
-     }
-     
-     storage.child("image/file.png").putData(imageData, metadata: nil) { _,error in
-     guard error == nil else{
-     print("failed to upload")
-     return
-     }
-     storage.child("image/file.png").downloadURL(completion: {url, error in
-     guard let url = url, error == nil else {
-     return
-     }
-     let urlString = url.absoluteString
-     print("\(urlString)")
-     })
-     }
-     }*/
+    func SaveImage(image: UIImage, id:String){
+        let storage = Storage.storage().reference()
+        let imageID = UUID()
+        guard let imageData = image.jpegData(compressionQuality: 0.5) else {
+            return
+        }
+        
+        storage.child("images/\(imageID.uuidString).jpg").putData(imageData, metadata: nil) { _,error in
+            guard error == nil else{
+                
+                return
+            }
+            storage.child("images/file.jpg").downloadURL(completion: {url, error in
+                guard let url = url, error == nil else {
+                    return
+                }
+                let urlString = url.absoluteString
+                self.messageRefBooks.child(id).child("imageURL").setValue(urlString)
+                
+            })
+        }
+    }
 }
 

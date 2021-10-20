@@ -24,7 +24,7 @@
         "repositoryURL": "https://github.com/facebook/facebook-ios-sdk",
         "state": {
           "branch": "main",
-          "revision": "5a2a28fe104bf94a67668d76a6b4ac8f3952268c",
+          "revision": "fc1d8073afccb8e52f2d1bdd1ac0a14de05ac31f",
           "version": null
         }
       },
@@ -33,7 +33,7 @@
         "repositoryURL": "https://github.com/firebase/firebase-ios-sdk.git",
         "state": {
           "branch": "master",
-          "revision": "fc2cf7bc8ae5f8a9fa80fcb9070a5eea1194d740",
+          "revision": "fd4572c291bf2ea3862bd639e861aefe646bb62e",
           "version": null
         }
       },
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/google/GoogleDataTransport.git",
         "state": {
           "branch": null,
-          "revision": "7fb27ea49414b9c5483503cd06baa821c8654d1e",
-          "version": "9.1.1"
+          "revision": "15ccdfd25ac55b9239b82809531ff26605e7556e",
+          "version": "9.1.2"
         }
       },
       {

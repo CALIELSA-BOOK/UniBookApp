@@ -4,7 +4,7 @@
 //
 //  Created by Linnea Bonnevier on 2021-09-25.
 //
-
+/*
 import SwiftUI
 
 struct AdView: View {
@@ -78,3 +78,4 @@ struct AdView_Previews: PreviewProvider {
         AdView()
     }
 }
+*/
