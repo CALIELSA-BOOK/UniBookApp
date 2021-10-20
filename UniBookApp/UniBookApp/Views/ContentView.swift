@@ -38,6 +38,8 @@ struct ContentView: View {
                             self.loadData = true
                         }
                         homeViewModel.getRandomBooks()
+                    }).onDisappear(perform: {
+                        homeViewModel.bookResult.removeAll()
                     })
                         .tabItem {
                             Label("Home", systemImage: "homekit")
