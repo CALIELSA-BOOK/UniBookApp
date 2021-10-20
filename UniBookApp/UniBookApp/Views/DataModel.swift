@@ -85,7 +85,7 @@ class DataModel: ObservableObject {
     }
     
     func SaveBookInfo(book:Book) {
-        let booksDict = ["name": book.name, "authors": book.authors, "isbn": book.isbn, "bookCover": book.bookCover, "id": book.id.uuidString, "price": book.price, "comment": book.comment,"condition":book.condition, "seller":self.userName]
+        let booksDict = ["name": book.name, "authors": book.authors, "isbn": book.isbn, "bookCover": book.bookCover, "id": book.id.uuidString, "price": book.price, "comment": book.comment,"condition":book.condition, "seller":UserDefaults.standard.string(forKey: "facebookID")]
         messageRefBooks.child(book.id.uuidString).setValue(booksDict)
     }
     

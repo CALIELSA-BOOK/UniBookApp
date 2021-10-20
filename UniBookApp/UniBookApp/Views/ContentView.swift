@@ -34,11 +34,11 @@ struct ContentView: View {
                         }
                     }.onAppear(perform:{
                         if self.loadData == false{
-                            //adViewModel.GetBooksForSale()
                             homeViewModel.getBooks()
                             self.loadData = true
                         }
                         homeViewModel.getRandomBooks()
+                        $homeViewModel.update
                     })
                         .tabItem {
                             Label("Home", systemImage: "homekit")
