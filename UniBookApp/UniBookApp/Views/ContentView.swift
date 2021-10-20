@@ -23,14 +23,22 @@ struct ContentView: View {
             VStack{
                 TabView {
                     NavigationView {
-                        HomeView(homeViewModel: homeViewModel)
-                            .navigationBarTitle("Welcome")
+                        if(!homeViewModel.bookResult.isEmpty){
+                            HomeView(homeViewModel: homeViewModel)
+                                .navigationBarTitle("Welcome")
+                        }
+                        else{
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: .gray))
+                                .scaleEffect(2)
+                        }
                     }.onAppear(perform:{
                         if self.loadData == false{
-                            adViewModel.GetBooksForSale()
-                            homeViewModel.getRandomBooks()
+                            //adViewModel.GetBooksForSale()
+                            homeViewModel.getBooks()
                             self.loadData = true
                         }
+                        homeViewModel.getRandomBooks()
                     })
                         .tabItem {
                             Label("Home", systemImage: "homekit")
