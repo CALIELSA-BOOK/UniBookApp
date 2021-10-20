@@ -38,7 +38,6 @@ struct ContentView: View {
                             self.loadData = true
                         }
                         homeViewModel.getRandomBooks()
-                        $homeViewModel.update
                     })
                         .tabItem {
                             Label("Home", systemImage: "homekit")
@@ -70,9 +69,3 @@ struct ContentView: View {
         }
     }
 }
-
-/*struct ContentView_Previews: PreviewProvider {
- static var previews: some View {
- ContentView()
- }
- }*/
