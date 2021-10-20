@@ -8,13 +8,21 @@
 import SwiftUI 
 
 struct ContentView: View {
+    @AppStorage("logged") var logged = false
+    @AppStorage("email") var email = ""
+    @AppStorage("username") var username: String = "Anonymous"
+    @AppStorage("facebookID") var id = ""
+    @AppStorage("profilePic") var profilePic: String = ""
     
     var body: some View {
 
-        if (!UserDefaults.standard.bool(forKey: "logged")) {
+        if (!logged) {
             NavigationView{
-                StartPageView()
+                FBLog(logged: $logged, email: $email, username: $username, profilePic: $profilePic, id: $id)
+                    .frame(height: 50)
+                    .padding(.horizontal,35)
             }
+            //loggedIn = true
         }else{
             VStack{
                 TabView {
