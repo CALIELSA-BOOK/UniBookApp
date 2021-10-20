@@ -33,7 +33,7 @@ struct ContentView: View {
                             Label("Home", systemImage: "homekit")
                         }
                     NavigationView {
-                        SearchView(searchViewModel: searchViewModel)
+                        SearchView(searchViewModel: searchViewModel, adViewModel: adViewModel)
                             .navigationTitle("Search")
                     }.onDisappear(perform: {searchViewModel.emptyArray()})
                         .tabItem {
@@ -48,7 +48,7 @@ struct ContentView: View {
                         Label("Add", systemImage: "plus")
                     }
                     NavigationView {
-                        ProfileView()
+                        ProfileView(searchViewModel: searchViewModel, adViewModel: adViewModel)
                             .navigationTitle("Profile")
                     }
                     .tabItem {

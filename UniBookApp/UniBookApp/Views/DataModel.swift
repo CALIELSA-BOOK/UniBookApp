@@ -12,7 +12,7 @@ import GameKit
 import SwiftUI
 
 struct Book: Identifiable, Hashable{
-    var id = UUID()
+    var id: String
     var name: String
     var authors: String
     var isbn: String
@@ -36,9 +36,9 @@ class DataModel: ObservableObject {
         return filtered
     }
     
-    func findUserBooks(id: UUID) -> [Book]{
+    func findUserBooks(seller: String) -> [Book]{
         let filtered = booksForSale.filter { Book in
-            return Book.id == id
+            return Book.seller == seller
         }
         return filtered
     }
@@ -58,7 +58,7 @@ class DataModel: ObservableObject {
             for (_,value) in dataSnapshot {
                 let bookData = value as! [String : AnyObject]
                 
-                self.booksForSale.append(Book(name: bookData["name"] as! String,
+                self.booksForSale.append(Book(id: bookData["id"] as! String, name: bookData["name"] as! String,
                                               authors:(bookData["authors"] as! String),
                                               isbn:bookData["isbn"] as! String,
                                               bookCover:bookData["bookCover"] as! String,
@@ -70,8 +70,9 @@ class DataModel: ObservableObject {
     }
     
     func SaveBookInfo(book:Book) {
-        let booksDict = ["name": book.name, "authors": book.authors, "isbn": book.isbn, "bookCover": book.bookCover, "id": book.id.uuidString, "price": book.price, "comment": book.comment,"condition":book.condition, "seller":self.userName]
-        messageRefBooks.child(book.id.uuidString).setValue(booksDict)
+      
+        let booksDict = ["name": book.name, "authors": book.authors, "isbn": book.isbn, "bookCover": book.bookCover, "id": book.id, "price": book.price, "comment": book.comment,"condition":book.condition, "seller":UserDefaults.standard.string(forKey: "facebookID")]
+        messageRefBooks.child(book.id).setValue(booksDict)
     }
     
     func SaveImage(image: UIImage, id:String){

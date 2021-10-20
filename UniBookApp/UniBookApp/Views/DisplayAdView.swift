@@ -8,8 +8,10 @@
 import SwiftUI
 import SDWebImageSwiftUI
 struct DisplayAdView: View {
+    @ObservedObject var adViewModel: CreateAdViewModel
     var book: Book
     var body: some View {
+        if !book.id.isEmpty{
         VStack{BookInformationView(booktitle: book.name,bookauthor: book.authors,bookISBN: book.isbn)
         
             VStack{
@@ -29,6 +31,13 @@ struct DisplayAdView: View {
                     }.indicator(.activity).transition(.fade(duration: 0.3)).scaledToFit().frame(width:UIScreen.main.bounds.width/2, alignment: .center)
                 }
             Spacer()
+            if book.seller == UserDefaults.standard.string(forKey: "facebookID"){
+                Button("Delete AD"){
+                    adViewModel.deleteBook(id: book.id)
+                    adViewModel.GetBooksForSale()
+                    adViewModel.emptyArrays()
+                    }.foregroundColor(.white).padding(.all).frame(width: 250, height: 50).background(Color(red: 255/255, green: 1/255, blue: 1/255)).cornerRadius(16)
+            }
             Button("Contact Seller"){
                 if let url = URL(string: "mailto:\(book.seller!)?subject=UniBookApp%20"+book.name+"%20&body=I%20would%20like%20to%20buy%20your%20book")
                 {
@@ -36,6 +45,14 @@ struct DisplayAdView: View {
                 }
                 
                 }.foregroundColor(.white).padding(.all).frame(width: 250, height: 50).background(Color(red: 25/255, green: 85/255, blue: 166/255)).cornerRadius(16)
-        }.navigationBarTitle("Ad")
+        }
+            
+        }
+        else{
+            Text("Book deleted")
+            
+        }
+        
+        
     }
 }

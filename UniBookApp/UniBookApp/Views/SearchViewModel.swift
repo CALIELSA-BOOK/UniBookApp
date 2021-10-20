@@ -12,6 +12,7 @@ class SearchViewModel: Identifiable, ObservableObject{
     @ObservedObject private var dataModel: DataModel
     @Published var searchTerm: String = ""
     @Published public var bookResult: [Book] = []
+    @Published public var userBookResult: [Book] = []
     
     @Published var isbnView: Bool?
     private var disposables = Set<AnyCancellable>()
@@ -29,6 +30,15 @@ class SearchViewModel: Identifiable, ObservableObject{
     
     public func emptyArray(){
         bookResult.removeAll()
+    }
+    
+    public func findUserBooks(seller: String){
+        self.userBookResult.removeAll()
+        
+        let result = self.dataModel.findUserBooks(seller: seller)
+        result.forEach({book in
+            self.userBookResult.append(book)
+        })
     }
     
     public func findISBNBooks(isbn: String){
