@@ -58,13 +58,12 @@ class DataModel: ObservableObject {
             for (_,value) in dataSnapshot {
                 let bookData = value as! [String : AnyObject]
                 
-                self.booksForSale.append(Book(name:bookData["name"] as! String,
-                                              authors:bookData["authors"] as! String,
-                                              
+                self.booksForSale.append(Book(name: bookData["name"] as! String,
+                                              authors:(bookData["authors"] as! String),
                                               isbn:bookData["isbn"] as! String,
                                               bookCover:bookData["bookCover"] as! String,
-                                              price:bookData["price"] as? String ?? "",
-                                              seller:bookData["seller"] as? String ?? "",imageURL:bookData["imageURL"] as? String ?? ""))
+                                              price:(bookData["price"] as! String),
+                                              comment:(bookData["seller"] as! String),condition:(bookData["condition"] as! String),seller:(bookData["seller"] as! String),imageURL:bookData["imageURL"] as? String ?? ""))
             }
         }
         );
