@@ -19,32 +19,11 @@ struct FBLoginView: View {
     @State private var isShowingDetails = false
     
     var body: some View{
-        
-        VStack(spacing: 25){
-           // if (!logged){
             FBLog(logged: $logged, email: $email, username: $username, profilePic: $profilePic, id: $id)
                 .frame(height: 50)
                 .padding(.horizontal,35)
-//            }else if(logged && ){
-//                FBLog(logged: $logged, email: $email, username: $username, profilePic: $profilePic, id: $id)
-//                    .frame(height: 50)
-//                    .padding(.horizontal,35)
-//            }else{
-//                NavigationLink(destination: ContentView(), isActive: $isShowingDetails){
-//                    Button("Let's go Hello")
-//                        {
-//                            self.isShowingDetails = true
-//                        }
-//                        .foregroundColor(.white)
-//                        .padding(.all)
-//                        .frame(width: 250, height: 50)
-//                        .background(Color(red: 25/255, green: 85/255, blue: 166/255))
-//                        .cornerRadius(16)
- //               }
-            }
-
-        }
     }
+}
 
 
 struct FBLoginView_Previews: PreviewProvider {
