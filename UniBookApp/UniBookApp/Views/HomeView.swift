@@ -24,7 +24,17 @@ struct HomeView: View {
                         .foregroundColor(Color.white)
                         .font(.largeTitle)
                         .bold()
-                    PreviewPopularBooksView()
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 20) {
+                            ForEach (homeViewModel.booksFiltered, id: \.self){
+                                book in
+                                BookInformationView(booktitle: book.name, bookauthor: book.authors, bookISBN: book.isbn)
+                                    .foregroundColor(.black)
+                                    .frame(width: 250, height: 150)
+                                    .background(Color.white)
+                            }
+                        }
+                    }
                 }
             }
             Spacer()
@@ -45,17 +55,3 @@ struct HomeView: View {
     }
 }
 
-struct PreviewPopularBooksView: View {
-    var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 20) {
-                ForEach(0..<5) { index in
-                    BookInformationView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789")
-                        .foregroundColor(.black)
-                        .frame(width: 250, height: 150)
-                        .background(Color.white)
-                }
-            }
-        }
-    }
-}

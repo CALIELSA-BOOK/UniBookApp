@@ -37,6 +37,7 @@ struct ContentView: View {
                             self.loadData = true
                         }
                         homeViewModel.getRandomBooks()
+                        homeViewModel.filterUniqueBooks()
                     }).onDisappear(perform: {
                         homeViewModel.bookResult.removeAll()
                     })
