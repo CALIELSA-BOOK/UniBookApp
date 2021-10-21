@@ -10,6 +10,7 @@ import Combine
 
 class CreateAdViewModel: Identifiable, ObservableObject{
     @ObservedObject private var dataModel: DataModel
+    @Published public var bookResult: [Book] = []
     @Published var searchTerm: String = ""
     @Published public var books: [ISBNBookViewModel] = []
     @Published public var booksForAd: [Book] = []
@@ -81,7 +82,9 @@ class CreateAdViewModel: Identifiable, ObservableObject{
     }
     public func deleteBook(id: String){
         dataModel.deleteBook(id: id)
+        GetBooksForSale()
     }
+    
 }
 
 class ISBNBookViewModel: Identifiable, ObservableObject{

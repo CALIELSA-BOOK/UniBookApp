@@ -28,7 +28,9 @@ struct ProfileView: View {
                     Text("Settings")
                 }
                 NavigationLink(destination: MyAdsView(searchViewModel: searchViewModel, adViewModel: adViewModel).onAppear(perform: {
-                    searchViewModel.findUserBooks(seller: UserDefaults.standard.string(forKey: "facebookID")!)
+                    if(searchViewModel.userBookResult.isEmpty){
+                       searchViewModel.findUserBooks(seller: UserDefaults.standard.string(forKey: "facebookID")!)
+                    }
                 })){
                     Text("My Ads")
                 }

@@ -26,7 +26,7 @@ struct SearchView: View {
                         VStack(spacing: 25){
                            
                             ForEach(searchViewModel.bookResult, id: \.self) {book in
-                                NavigationLink(destination: DisplayAdView(adViewModel: adViewModel, book: book)){
+                                NavigationLink(destination: DisplayAdView(adViewModel: adViewModel, searchViewModel: searchViewModel, book: book)){
                                     BookItemView(booktitle: book.name, bookauthor: book.authors, bookISBN: book.isbn, bookPrice: book.price!).padding(.bottom,geometry.size.height * 0.10)
                                 Spacer()
                             

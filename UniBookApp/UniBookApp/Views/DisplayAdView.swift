@@ -9,6 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 struct DisplayAdView: View {
     @ObservedObject var adViewModel: CreateAdViewModel
+    @ObservedObject var searchViewModel: SearchViewModel
     var book: Book
     var body: some View {
         if !book.id.isEmpty{
@@ -36,6 +37,7 @@ struct DisplayAdView: View {
                     adViewModel.deleteBook(id: book.id)
                     adViewModel.GetBooksForSale()
                     adViewModel.emptyArrays()
+                    searchViewModel.findUserBooks(seller: UserDefaults.standard.string(forKey: "facebookID")!)
                     }.foregroundColor(.white).padding(.all).frame(width: 250, height: 50).background(Color(red: 255/255, green: 1/255, blue: 1/255)).cornerRadius(16)
             }
             Button("Contact Seller"){

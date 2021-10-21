@@ -13,6 +13,7 @@ struct CreateAdView: View {
     @State private var bookComment: String = ""
     @State private var selection = 1
     @State var isShowingDetails: Bool = false
+    @State private var isSaved: Bool = false
     @StateObject var isbnView = ViewBool()
     @ObservedObject var isLoading: LoadingStatus
     var arrayOfConditions = ["New","Good","Fair","Poor"]
@@ -36,8 +37,18 @@ struct CreateAdView: View {
                     })
                 
             }
+            if isSaved{
+                VStack{
+                    Text("You ad has been saved")
+                        .font(.system(size: 30, weight: .medium)).onDisappear(perform: {
+                            self.isSaved = false
+                        })
+                    
+                }
+                
+            }
             
-            else{
+            if !adViewModel.booksForAd.isEmpty{
                 BookInformationView(booktitle: adViewModel.booksForAd[0].name,bookauthor:  adViewModel.booksForAd[0].authors,bookISBN:  adViewModel.booksForAd[0].isbn)
                 
                 VStack{
@@ -74,13 +85,13 @@ struct CreateAdView: View {
                 }
                 //Could add a picker for course name if we have time
                 // Send in data to preview View
-                NavigationLink("Create AD",destination: SavedStateView(), isActive: $isShowingDetails)
+                NavigationLink("Create AD",destination: SavedStateView(), isActive: $isSaved)
                     .foregroundColor(.white)
                     .padding(.all)
                     .frame(width: 250, height: 50)
                     .background(Color(red: 25/255, green: 85/255, blue: 166/255))
                     .cornerRadius(16)
-                    .simultaneousGesture(TapGesture().onEnded{
+                    .simultaneousGesture(TapGesture().onEnded{ isSaved = true
                         adViewModel.CreateAd(price: price, bookComment: bookComment, condition: arrayOfConditions[selection])
                     })
                 
