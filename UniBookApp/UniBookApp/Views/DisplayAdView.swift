@@ -50,7 +50,6 @@ struct DisplayAdView: View {
         }
         else{
             Text("Book deleted")
-            
         }
         
         

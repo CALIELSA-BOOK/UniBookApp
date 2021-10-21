@@ -11,7 +11,7 @@ struct BookItemView: View {
     var booktitle: String
     var bookauthor: String
     var bookISBN: String
-    var bookPrice: Int
+    var bookPrice: String
     //book Image
     
     var body: some View {
@@ -48,6 +48,6 @@ struct BookItemView: View {
 
 struct BookItemView_Previews: PreviewProvider {
     static var previews: some View {
-        BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: 320)
+        BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: "320")
     }
 }

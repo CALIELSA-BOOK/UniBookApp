@@ -23,7 +23,7 @@ struct SearchView: View {
                            
                             ForEach(searchViewModel.bookResult, id: \.self) {book in
                                 NavigationLink(destination: DisplayAdView(adViewModel: adViewModel, book: book)){
-                                    BookItemView(booktitle: book.name, bookauthor: book.authors, bookISBN: book.isbn, bookPrice: 10).padding(.bottom,geometry.size.height * 0.10)
+                                    BookItemView(booktitle: book.name, bookauthor: book.authors, bookISBN: book.isbn, bookPrice: book.price!).padding(.bottom,geometry.size.height * 0.10)
                                 Spacer()
                             
                             }.buttonStyle(PlainButtonStyle())

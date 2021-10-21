@@ -38,13 +38,13 @@ struct HomeView: View {
                     .font(.system(size: 20.0, weight: .bold))
                     .padding(.top)
                 ScrollView{
-                    BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: 230)
+                    BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: "230")
                         .padding(.bottom,geometry.size.height * 0.10)
-                    BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: 340)
+                    BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: "340")
                         .padding(.bottom,geometry.size.height * 0.10)
-                    BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: 500)
+                    BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: "500")
                         .padding(.bottom,geometry.size.height * 0.10)
-                    BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: 320)
+                    BookItemView(booktitle: "Calulus - A Complete Course",bookauthor: "Name Surname",bookISBN: "123456789",bookPrice: "320")
                         .padding(.bottom,geometry.size.height * 0.10)
                 }
             }
