@@ -10,9 +10,8 @@ import FBSDKLoginKit
 
 //native fb-login button
 struct FBLog : UIViewRepresentable {
-    func updateUIView(_ uiView: FBLoginButton, context: Context){
-        FBLog.Coordinator(parent1: self)
-    }
+    
+    func updateUIView(_ uiView: FBLoginButton, context: Context){}
   
     func makeCoordinator() -> Coordinator {
         return FBLog.Coordinator(parent1: self)
