@@ -28,10 +28,11 @@ class DataModel: ObservableObject {
     @Published var userName: String = "Email"
     @Published var booksForSale: [Book] = []
     var messageRefBooks: DatabaseReference = Database.database().reference().ref.child("/Books4Sale")
+    @Published var isLoading = LoadingStatus()
     
-    func findISBNBooks(isbn: String) -> [Book]{
+    func findBooks(name: String) -> [Book]{
         let filtered = booksForSale.filter { Book in
-            return Book.isbn == isbn
+            return Book.name.contains(name)
         }
         return filtered
     }
@@ -97,5 +98,59 @@ class DataModel: ObservableObject {
             })
         }
     }
+    func getBookInfo(isbn: String, completion: @escaping (ISBNData) -> Void) {
+        if isbn == "" {return}
+        else{
+            self.isLoading.isLoading = .loading
+        let sessionConfig = URLSessionConfiguration.default
+        let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
+
+        guard let URL = URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn) else {return}
+
+        var request = URLRequest(url: URL)
+        request.httpMethod = "GET"
+
+        let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
+            if (error == nil) {
+                guard let jsonData = data else {
+                    DispatchQueue.main.async {
+                        self.isLoading.isLoading = .noresult
+                    }
+                    return}
+                
+                do {
+                    let bookData = try JSONDecoder().decode(ISBNData.self, from: jsonData)
+                    DispatchQueue.main.async {
+                        self.isLoading.isLoading = .result
+                    }
+                    completion(bookData)
+                }catch{
+                    DispatchQueue.main.async {
+                        self.isLoading.isLoading = .noresult
+                    }
+                    print("catch")
+                    print(error)
+                }
+                
+            }
+            else {
+                self.isLoading.isLoading = .noresult
+                print(error!.localizedDescription);
+               
+            }
+        })
+            task.resume()
+        }
+    }
 }
 
+class LoadingStatus: ObservableObject{
+    @Published var isLoading: loadingStatus = .awaiting
+    
+    enum loadingStatus{
+        case awaiting
+        case loading
+        case result
+        case noresult
+    }
+}

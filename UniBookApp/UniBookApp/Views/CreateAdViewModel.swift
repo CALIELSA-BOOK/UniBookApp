@@ -16,11 +16,12 @@ class CreateAdViewModel: Identifiable, ObservableObject{
     @Published var images: [UIImage] = []
     @Published var image: UIImage?
     @Published var isbnView: Bool?
-    private let isbnSource: ISBNSource = ISBNSource()
+    @ObservedObject var isLoading: LoadingStatus
     private var disposables = Set<AnyCancellable>()
 
     init(model: DataModel){
         self.dataModel = model
+        self.isLoading = model.isLoading
         $searchTerm
           .sink(receiveValue: loadBook(searchTerm:))
           .store(in: &disposables)
@@ -68,7 +69,7 @@ class CreateAdViewModel: Identifiable, ObservableObject{
                            
     private func loadBook(searchTerm: String) {
       books.removeAll()
-        isbnSource.getBookInfo(isbn: searchTerm) {book in
+        dataModel.getBookInfo(isbn: searchTerm) {book in
               DispatchQueue.main.async {
                   let isbnBookViewModel = ISBNBookViewModel(isbnData: book)
                   self.books.append(isbnBookViewModel)

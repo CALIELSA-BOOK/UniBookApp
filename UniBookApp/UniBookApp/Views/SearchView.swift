@@ -10,13 +10,17 @@ import SwiftUI
 struct SearchView: View {
     @ObservedObject var searchViewModel: SearchViewModel
     @ObservedObject var adViewModel: CreateAdViewModel
-    
     var body: some View {
         GeometryReader{ geometry in
             VStack{
-                Text("Enter ISBN")
                 SearchBar(searchTerm: $searchViewModel.searchTerm)
-                if searchViewModel.bookResult.isEmpty{EmptyStateView()}
+                if searchViewModel.bookResult.isEmpty{
+                    if searchViewModel.isLoading.isLoading == .noresult{
+                        Text("No result")
+                        Spacer()
+                    }
+                    EmptyStateView()
+                }
                 else{
                     ScrollView(.vertical){
                         VStack(spacing: 25){
@@ -36,3 +40,4 @@ struct SearchView: View {
     }
     }
 }
+

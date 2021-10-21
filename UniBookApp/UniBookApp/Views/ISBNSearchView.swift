@@ -9,12 +9,19 @@ import SwiftUI
 struct ISBNSearchView: View {
     @ObservedObject var adViewModel: CreateAdViewModel
     @ObservedObject var viewBool: ViewBool
+    @ObservedObject var isLoading: LoadingStatus
     
     var body: some View {
         VStack{
            Text("Enter your books ISBN")
             SearchBar(searchTerm: $adViewModel.searchTerm)
             if adViewModel.books.isEmpty{
+                if isLoading.isLoading == .loading{
+                    ProgressView().progressViewStyle(CircularProgressViewStyle(tint: .gray)).scaleEffect(2)
+                }
+                if isLoading.isLoading == .noresult{
+                    Text("No result")
+                }
                 EmptyStateView()
             }
             else {ISBNSearchResultView(adViewModel: adViewModel,viewBool: viewBool, isbnFinal: adViewModel.searchTerm)

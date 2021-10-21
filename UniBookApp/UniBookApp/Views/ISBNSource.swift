@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-
+/*
 class ISBNSource{
 
     func getBookInfo(isbn: String, completion: @escaping (ISBNData) -> Void) {
@@ -39,3 +39,4 @@ class ISBNSource{
         task.resume()
     }
 }
+*/

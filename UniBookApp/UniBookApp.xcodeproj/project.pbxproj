@@ -33,6 +33,7 @@
 		32B868C42701109400549EC7 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868C32701109400549EC7 /* ImagePicker.swift */; };
 		32B868CA2702247400549EC7 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868C92702247400549EC7 /* BookViewModel.swift */; };
 		32B868D22708AF0000549EC7 /* PreviewAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B868D12708AF0000549EC7 /* PreviewAdView.swift */; };
+		A301C3E92721B768002B2613 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301C3E82721B768002B2613 /* HomeViewModel.swift */; };
 		A3078A432720AC0A0052D477 /* MyAdsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3078A422720AC0A0052D477 /* MyAdsView.swift */; };
 		A32A52E0272081B800317CAA /* DisplayAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32A52DF272081B800317CAA /* DisplayAdView.swift */; };
 		A32A52E32720831400317CAA /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A32A52E22720831400317CAA /* SDWebImageSwiftUI */; };
@@ -98,6 +99,7 @@
 		32B868C32701109400549EC7 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		32B868C92702247400549EC7 /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
 		32B868D12708AF0000549EC7 /* PreviewAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewAdView.swift; sourceTree = "<group>"; };
+		A301C3E82721B768002B2613 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A3078A422720AC0A0052D477 /* MyAdsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdsView.swift; sourceTree = "<group>"; };
 		A32A52DF272081B800317CAA /* DisplayAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAdView.swift; sourceTree = "<group>"; };
 		A35ACA682717122B0026F877 /* ISBNSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISBNSearchView.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 		32B868CB2702249600549EC7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A301C3E82721B768002B2613 /* HomeViewModel.swift */,
 				A3ADEE41271ED02700434D6D /* EmptyStateView.swift */,
 				09D572B826FA203C00583899 /* ContentView.swift */,
 				32B868C92702247400549EC7 /* BookViewModel.swift */,
@@ -426,6 +429,7 @@
 				A3ADEE48271EEDFA00434D6D /* SearchViewModel.swift in Sources */,
 				328F2E002713655F006CF628 /* BookItemView.swift in Sources */,
 				A3ADEE3E271ECF5900434D6D /* CreateAdView.swift in Sources */,
+				A301C3E92721B768002B2613 /* HomeViewModel.swift in Sources */,
 				09D572B726FA203C00583899 /* UniBookAppApp.swift in Sources */,
 				A35ACA692717122B0026F877 /* ISBNSearchView.swift in Sources */,
 				090F85C7271EC4F400B9B9CC /* LoginViewModel.swift in Sources */,
