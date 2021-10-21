@@ -12,7 +12,7 @@ import FBSDKLoginKit
 struct FBLog : UIViewRepresentable {
     
     func updateUIView(_ uiView: FBLoginButton, context: Context){}
-  
+    
     func makeCoordinator() -> Coordinator {
         return FBLog.Coordinator(parent1: self)
     }
@@ -33,7 +33,7 @@ struct FBLog : UIViewRepresentable {
     class Coordinator : NSObject, LoginButtonDelegate{
         
         var parent : FBLog
-
+        
         init(parent1 : FBLog){
             parent = parent1
         }
@@ -41,7 +41,6 @@ struct FBLog : UIViewRepresentable {
         func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
             let token = result?.token?.tokenString
             
-            //getting user details
             let request = GraphRequest(graphPath: "me", parameters: ["fields": "name, email, picture"],
                                        tokenString: token,
                                        version: nil,
@@ -53,7 +52,7 @@ struct FBLog : UIViewRepresentable {
                 self.parent.id = profileData["id"] as! String
                 if let imageURL = ((profileData["picture"] as? [String: Any])?["data"] as? [String: Any])?["url"] as? String {
                     self.parent.profilePic = imageURL
-                    }
+                }
                 self.parent.logged = true
             })
             if error != nil{

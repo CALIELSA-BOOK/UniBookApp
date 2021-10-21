@@ -19,9 +19,9 @@ struct FBLoginView: View {
     @State private var isShowingDetails = false
     
     var body: some View{
-            FBLog(logged: $logged, email: $email, username: $username, profilePic: $profilePic, id: $id)
-                .frame(height: 50)
-                .padding(.horizontal,35)
+        FBLog(logged: $logged, email: $email, username: $username, profilePic: $profilePic, id: $id)
+            .frame(height: 50)
+            .padding(.horizontal,35)
     }
 }
 

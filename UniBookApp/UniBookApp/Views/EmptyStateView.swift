@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct EmptyStateView: View {
-  var body: some View {
-    VStack {
-      Text("")
-      Spacer()
+    var body: some View {
+        VStack {
+            Text("")
+            Spacer()
+        }
     }
-  }
 }
 
 struct SavedStateView: View {
-  var body: some View {
-    VStack {
-      Text("Ad Saved!")
-      Spacer()
+    var body: some View {
+        VStack {
+            Text("Ad Saved!")
+            Spacer()
+        }
     }
-  }
 }
 
 struct EmptyStateView_Previews: PreviewProvider {

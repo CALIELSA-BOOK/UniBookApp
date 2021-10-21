@@ -14,7 +14,7 @@ struct BookInformationView: View {
     
     var body: some View {
         HStack{
-            Image(systemName: "book.closed") /**Excahnge for real book cover**/
+            Image(systemName: "book.closed")
                 .renderingMode(.original)
                 .resizable()
                 .aspectRatio(contentMode: .fit)

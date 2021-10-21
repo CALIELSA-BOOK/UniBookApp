@@ -18,7 +18,6 @@ struct LoginOptionsView: View {
                     .font(.subheadline)
                     .foregroundColor(Color(red: 161/255, green: 164/255, blue: 178/255))
                 FBLoginView()
-                //Add more options!
             }
         }
     }

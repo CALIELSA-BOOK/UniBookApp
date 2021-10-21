@@ -21,11 +21,10 @@ struct Book: Identifiable, Hashable{
     var comment: String?
     var condition: String?
     var seller: String?
-    var imageURL: String?// Change later
+    var imageURL: String?
+    var email: String?
 }
 class DataModel: ObservableObject {
-    @Published var message: String = "fetching"
-    @Published var userName: String = "Email"
     @Published var booksForSale: [Book] = []
     var messageRefBooks: DatabaseReference = Database.database().reference().ref.child("/Books4Sale")
     @Published var isLoading = LoadingStatus()
@@ -49,13 +48,14 @@ class DataModel: ObservableObject {
     }
     
     func GetBooksForSale() {
-        
+        booksForSale.removeAll()
         messageRefBooks.getData(completion:  { error, snapshot in
             guard error == nil else {
                 print(error!.localizedDescription)
                 return;
             }
             let dataSnapshot = snapshot.value as! [String : AnyObject]
+            
             for (_,value) in dataSnapshot {
                 let bookData = value as! [String : AnyObject]
                 
@@ -64,15 +64,16 @@ class DataModel: ObservableObject {
                                               isbn:bookData["isbn"] as! String,
                                               bookCover:bookData["bookCover"] as! String,
                                               price:(bookData["price"] as! String),
-                                              comment:(bookData["seller"] as! String),condition:(bookData["condition"] as! String),seller:(bookData["seller"] as! String),imageURL:bookData["imageURL"] as? String ?? ""))
+                                              comment:(bookData["comment"] as! String),condition:(bookData["condition"] as! String),seller:(bookData["seller"] as! String),imageURL:bookData["imageURL"] as? String ?? "", email:(bookData["email"] as! String)))
+                
             }
         }
         );
     }
     
     func SaveBookInfo(book:Book) {
-      
-        let booksDict = ["name": book.name, "authors": book.authors, "isbn": book.isbn, "bookCover": book.bookCover, "id": book.id, "price": book.price, "comment": book.comment,"condition":book.condition, "seller":UserDefaults.standard.string(forKey: "facebookID")]
+        
+        let booksDict = ["name": book.name, "authors": book.authors, "isbn": book.isbn, "bookCover": book.bookCover, "id": book.id, "price": book.price, "comment": book.comment,"condition":book.condition, "seller":UserDefaults.standard.string(forKey: "facebookID"), "email":book.email]
         messageRefBooks.child(book.id).setValue(booksDict)
     }
     
@@ -102,43 +103,42 @@ class DataModel: ObservableObject {
         if isbn == "" {return}
         else{
             self.isLoading.isLoading = .loading
-        let sessionConfig = URLSessionConfiguration.default
-        let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
-
-        guard let URL = URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn) else {return}
-
-        var request = URLRequest(url: URL)
-        request.httpMethod = "GET"
-
-        let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
-            if (error == nil) {
-                guard let jsonData = data else {
-                    DispatchQueue.main.async {
-                        self.isLoading.isLoading = .noresult
+            let sessionConfig = URLSessionConfiguration.default
+            let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
+            
+            guard let URL = URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn) else {return}
+            
+            var request = URLRequest(url: URL)
+            request.httpMethod = "GET"
+            
+            let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
+                if (error == nil) {
+                    guard let jsonData = data else {
+                        DispatchQueue.main.async {
+                            self.isLoading.isLoading = .noresult
+                        }
+                        return}
+                    
+                    do {
+                        let bookData = try JSONDecoder().decode(ISBNData.self, from: jsonData)
+                        DispatchQueue.main.async {
+                            self.isLoading.isLoading = .result
+                        }
+                        completion(bookData)
+                    }catch{
+                        DispatchQueue.main.async {
+                            self.isLoading.isLoading = .noresult
+                        }
+                        print(error)
                     }
-                    return}
-                
-                do {
-                    let bookData = try JSONDecoder().decode(ISBNData.self, from: jsonData)
-                    DispatchQueue.main.async {
-                        self.isLoading.isLoading = .result
-                    }
-                    completion(bookData)
-                }catch{
-                    DispatchQueue.main.async {
-                        self.isLoading.isLoading = .noresult
-                    }
-                    print("catch")
-                    print(error)
+                    
                 }
-                
-            }
-            else {
-                self.isLoading.isLoading = .noresult
-                print(error!.localizedDescription);
-               
-            }
-        })
+                else {
+                    self.isLoading.isLoading = .noresult
+                    print(error!.localizedDescription);
+                    
+                }
+            })
             task.resume()
         }
     }
