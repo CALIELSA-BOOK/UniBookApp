@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ProfileView: View {
     @State private var isShowingDetails = false
-
+    @ObservedObject var searchViewModel: SearchViewModel
+    @ObservedObject var adViewModel: CreateAdViewModel
     var body: some View {
         VStack{
             List{
@@ -26,7 +27,9 @@ struct ProfileView: View {
                 NavigationLink(destination: Text("Comming soon")){
                     Text("Settings")
                 }
-                NavigationLink(destination: Text("My Published Ads")){
+                NavigationLink(destination: MyAdsView(searchViewModel: searchViewModel, adViewModel: adViewModel).onAppear(perform: {
+                    searchViewModel.findUserBooks(seller: UserDefaults.standard.string(forKey: "facebookID")!)
+                })){
                     Text("My Ads")
                 }
             }
@@ -36,9 +39,10 @@ struct ProfileView: View {
         }
     }
 }
-
+/*
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
     }
  }
+*/

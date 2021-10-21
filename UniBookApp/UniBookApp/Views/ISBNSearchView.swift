@@ -32,13 +32,14 @@ struct ISBNSearchResultView: View {
         if adViewModel.books.isEmpty{EmptyStateView()}
         else{
         VStack{
-            Text("Title: " + adViewModel.books[0].title)
-            Text("Published date: " + adViewModel.books[0].publishedDate)
+            Text("Title: " + adViewModel.books[0].title).font(.system(size: 26, weight: .medium, design: .default))
+            Text("Published date: " + adViewModel.books[0].publishedDate).font(.system(size: 16, weight: .light, design: .default))
             Text("Authors: ")
             ForEach(adViewModel.books[0].authors, id: \.self) { author in
                            Text(author)
-                       }
-            Text("Language: " + adViewModel.books[0].language)
+                       }.font(.system(size: 16, weight: .light, design: .default))
+            Text("Language: " + adViewModel.books[0].language).font(.system(size: 16, weight: .light, design: .default))
+            Spacer()
             Button("Add to ad") {
                 adViewModel.convertAPIToBook(isbn: isbnFinal)
                 self.viewBool.viewBool = false

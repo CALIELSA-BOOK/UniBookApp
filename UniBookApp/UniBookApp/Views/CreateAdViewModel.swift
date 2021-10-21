@@ -42,8 +42,9 @@ class CreateAdViewModel: Identifiable, ObservableObject{
     }
     
     public func convertAPIToBook(isbn: String){
+        let uID = UUID().uuidString
         let tempAuthors = self.books[0].authors.joined(separator: ", ")
-        let bookToAdd = Book(name: self.books[0].title,
+        let bookToAdd = Book(id: uID, name: self.books[0].title,
                              authors: tempAuthors,
                              isbn: isbn,
                              bookCover: "closed"
@@ -59,7 +60,7 @@ class CreateAdViewModel: Identifiable, ObservableObject{
         self.dataModel.SaveBookInfo(book: self.booksForAd[0])
         
             images.forEach({ image in
-                self.saveImage(image: image, id: booksForAd[0].id.uuidString)
+                self.saveImage(image: image, id: booksForAd[0].id)
             })
         self.emptyArrays();
         self.GetBooksForSale()
@@ -76,6 +77,9 @@ class CreateAdViewModel: Identifiable, ObservableObject{
     }
     public func saveImage(image: UIImage,id:String){
         dataModel.SaveImage(image: image, id: id)
+    }
+    public func deleteBook(id: String){
+        dataModel.deleteBook(id: id)
     }
 }
 
