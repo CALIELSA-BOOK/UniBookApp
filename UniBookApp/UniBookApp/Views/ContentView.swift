@@ -53,7 +53,7 @@ struct ContentView: View {
                         }
                     NavigationView {
                         ScrollView {
-                            CreateAdView(adViewModel: adViewModel)
+                            CreateAdView(adViewModel: adViewModel, isLoading: adViewModel.isLoading)
                         }
                     }
                     .tabItem {

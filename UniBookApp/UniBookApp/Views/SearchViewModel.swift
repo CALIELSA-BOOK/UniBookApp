@@ -10,17 +10,18 @@ import Combine
 
 class SearchViewModel: Identifiable, ObservableObject{
     @ObservedObject private var dataModel: DataModel
+    @ObservedObject var isLoading: LoadingStatus
     @Published var searchTerm: String = ""
     @Published public var bookResult: [Book] = []
     @Published public var userBookResult: [Book] = []
-    
     @Published var isbnView: Bool?
     private var disposables = Set<AnyCancellable>()
     
     init(model: DataModel){
         self.dataModel = model
+        self.isLoading = model.isLoading
         $searchTerm
-            .sink(receiveValue: findISBNBooks(isbn:))
+            .sink(receiveValue: findBooks(name:))
             .store(in: &disposables)
     }
     
@@ -41,13 +42,19 @@ class SearchViewModel: Identifiable, ObservableObject{
         })
     }
     
-    public func findISBNBooks(isbn: String){
-        self.bookResult.removeAll()
+    public func findBooks(name: String){
         
-        let result = self.dataModel.findISBNBooks(isbn: isbn)
-        result.forEach({book in
-            self.bookResult.append(book)
-        })
+        if name.isEmpty{return}
+        else{
+            self.bookResult.removeAll()
+            let result = self.dataModel.findBooks(name: name)
+            if result.isEmpty{
+                self.isLoading.isLoading = .noresult
+            }
+            result.forEach({book in
+                self.bookResult.append(book)
+            })
+        }
     }
 }
 
