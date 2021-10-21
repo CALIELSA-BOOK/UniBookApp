@@ -11,6 +11,7 @@ struct ContentView: View {
     @AppStorage("logged") var logged = false
     @ObservedObject var adViewModel: CreateAdViewModel
     @ObservedObject var searchViewModel: SearchViewModel
+    @ObservedObject var homeViewModel: HomeViewModel
     @State var loadData: Bool = false
   
     var body: some View {
@@ -20,18 +21,29 @@ struct ContentView: View {
         }else{
             VStack{
                 TabView {
-                   NavigationView {
-                        HomeView()
-                            .navigationBarTitle("Welcome")
-                    }.onAppear(perform:{
-                        if self.loadData == false{
-                            adViewModel.GetBooksForSale()
-                            self.loadData = true
-                        }
-                    })
-                        .tabItem {
-                            Label("Home", systemImage: "homekit")
-                        }
+                    NavigationView {
+                                           HomeView(homeViewModel: homeViewModel)
+                                                    .navigationBarTitle("Welcome")
+
+                                        }.onAppear(perform:{
+                                            homeViewModel.getBooks()
+                                            if(homeViewModel.start=="start"){
+                                            let seconds = 3.0
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                                            homeViewModel.getRandomBooks()
+                                            homeViewModel.filterUniqueBooks()
+                                            }
+                                            } else {
+                                                homeViewModel.getRandomBooks()
+                                                homeViewModel.filterUniqueBooks()
+                                            }
+                                        }).onDisappear(perform: {
+                                            homeViewModel.bookResult.removeAll()
+                                        })
+                                            .tabItem {
+                                                Label("Home", systemImage: "homekit")
+                                            }
+
                     NavigationView {
                         SearchView(searchViewModel: searchViewModel, adViewModel: adViewModel)
                             .navigationTitle("Search")
