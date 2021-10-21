@@ -7,7 +7,7 @@ UniBookApp is an iOS app built in SwitftUI.
 
 ## Running the app
 
-As of now the app is not deployed. You will therefore have to run it using xcode. 
+As of now the app is not deployed. You will therefore have to run it using xcode. For full functionality we advice plugging in your own adivce and run the app on that. Note: some features (e.g scan) only works with iOS 15. 
 
 ## Api:s and database used
 
