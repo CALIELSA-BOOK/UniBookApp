@@ -1,6 +1,6 @@
 # UniBookApp
 
-UniBokkApp is an app where a user can sell and buy second hand course literature. A user logs in using Facebook and can then browse popular titles ans latest views. They can also search among ads and create their on ads.
+UniBokApp is an app where a user can sell and buy second hand course literature. A user logs in using Facebook and can then browse popular titles ans latest views. They can also search among ads and create their on ads.
 An add contains title, ISBN, price, condition and images of the book, which the user can upload from it's cameraroll. 
 
 UniBookApp is an iOS app built in SwitftUI. 
