@@ -13,7 +13,7 @@ As of now the app is not deployed. You will therefore have to run it using xcode
 
 ### Facebook Api
 
-Used for authentication and profile parameters, such as name, id, email and profiel picture. 
+Used for authentication and profile parameters, such as name, id, email and profile picture. 
 
 ### Google Books Api
 
