@@ -24,13 +24,4 @@ Used to fetch books based on their ISBN when creating an ad.
 The database used. Stores ads and users (id and the user's ads).
 
 
---------------------------------------------------------------
-
-Do we want to have this?
-## File structure
-
-* [UniBookApp/UniBookAppApp](./UniBookApp/UniBookAppApp)
-  * [UniBookAppApp.swift](./UniBookApp/UniBookAppApp/UniBookAppApp.swift)
-  Main swift file.
-  * [Views](./UniBookApp/UniBookAppApp/Views)
 
