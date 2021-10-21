@@ -12,7 +12,6 @@ struct BookItemView: View {
     var bookauthor: String
     var bookISBN: String
     var bookPrice: String
-    //book Image
     
     var body: some View {
         GeometryReader{ geometry in

@@ -13,37 +13,34 @@ struct ContentView: View {
     @ObservedObject var searchViewModel: SearchViewModel
     @ObservedObject var homeViewModel: HomeViewModel
     @State var loadData: Bool = false
-  
+    
     var body: some View {
-
+        
         if (!logged) {
-                StartPageView()
+            StartPageView()
         }else{
             VStack{
                 TabView {
                     NavigationView {
-                                           HomeView(homeViewModel: homeViewModel)
-                                                    .navigationBarTitle("Welcome")
-
-                                        }.onAppear(perform:{
-                                            homeViewModel.getBooks()
-                                            if(homeViewModel.start=="start"){
-                                            let seconds = 3.0
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                                            homeViewModel.getRandomBooks()
-                                            homeViewModel.filterUniqueBooks()
-                                            }
-                                            } else {
-                                                homeViewModel.getRandomBooks()
-                                                homeViewModel.filterUniqueBooks()
-                                            }
-                                        }).onDisappear(perform: {
-                                            homeViewModel.bookResult.removeAll()
-                                        })
-                                            .tabItem {
-                                                Label("Home", systemImage: "homekit")
-                                            }
-
+                        HomeView(homeViewModel: homeViewModel)
+                            .navigationBarTitle("Welcome")
+                        
+                    }.onAppear(perform:{
+                        homeViewModel.getBooks()
+                        if(homeViewModel.start=="start"){
+                            let seconds = 3.0
+                            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                                homeViewModel.getRandomBooks()
+                                homeViewModel.filterUniqueBooks()
+                            }
+                        } else {
+                            homeViewModel.getRandomBooks()
+                            homeViewModel.filterUniqueBooks()
+                        }
+                    }).tabItem {
+                            Label("Home", systemImage: "homekit")
+                        }
+                    
                     NavigationView {
                         SearchView(searchViewModel: searchViewModel, adViewModel: adViewModel)
                             .navigationTitle("Search")

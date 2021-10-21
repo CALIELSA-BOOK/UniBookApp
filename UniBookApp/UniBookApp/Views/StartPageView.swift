@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StartPageView: View {
     @State private var isShowingDetails = false
-
+    
     var body: some View {
         VStack{
             Text("UniBooks")
@@ -23,7 +23,7 @@ struct StartPageView: View {
                 .overlay(Circle().stroke(Color.gray, lineWidth: 2))
                 .shadow(radius:70)
                 .padding()
-           
+            
             FBLoginView()
         }
     }

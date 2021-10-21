@@ -8,8 +8,6 @@
 import SwiftUI
 import UIKit
 
-/** Add the camera functionality here later **/
-
 struct ImageUploadView: View {
     @ObservedObject var adViewModel: CreateAdViewModel
     @State private var isShowPhotoLibrary = false

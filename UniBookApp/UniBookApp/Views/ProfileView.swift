@@ -24,25 +24,17 @@ struct ProfileView: View {
                     Text(UserDefaults.standard.string(forKey: "username") ?? "Anonymous")
                         .font(.largeTitle)
                 }
-                NavigationLink(destination: Text("Comming soon")){
-                    Text("Settings")
-                }
-                NavigationLink(destination: MyAdsView(searchViewModel: searchViewModel, adViewModel: adViewModel).onAppear(perform: {
-                    searchViewModel.findUserBooks(seller: UserDefaults.standard.string(forKey: "facebookID")!)
+                NavigationLink(destination: MyAdsView(searchViewModel: searchViewModel).onAppear(perform: {
+                    if searchViewModel.userBookResult.isEmpty{
+                        searchViewModel.findUserBooks(seller: UserDefaults.standard.string(forKey: "facebookID")!)
+                    }
                 })){
                     Text("My Ads")
                 }
             }
-
+            
             FBLoginView()
             
         }
     }
 }
-/*
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
-    }
- }
-*/

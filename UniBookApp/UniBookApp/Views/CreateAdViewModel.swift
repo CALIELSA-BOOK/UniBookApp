@@ -18,19 +18,19 @@ class CreateAdViewModel: Identifiable, ObservableObject{
     @Published var isbnView: Bool?
     @ObservedObject var isLoading: LoadingStatus
     private var disposables = Set<AnyCancellable>()
-
+    
     init(model: DataModel){
         self.dataModel = model
         self.isLoading = model.isLoading
         $searchTerm
-          .sink(receiveValue: loadBook(searchTerm:))
-          .store(in: &disposables)
+            .sink(receiveValue: loadBook(searchTerm:))
+            .store(in: &disposables)
     }
     
     public func setSearchTerm(sTerm: String){
         self.searchTerm = sTerm
     }
-
+    
     public func emptyArrays(){
         self.books.removeAll()
         self.booksForAd.removeAll()
@@ -54,33 +54,31 @@ class CreateAdViewModel: Identifiable, ObservableObject{
         self.books.removeAll()
     }
     
-    public func CreateAd(price: String, bookComment: String, condition: String){
+    public func CreateAd(price: String, bookComment: String, condition: String, email: String){
         self.booksForAd[0].price = price
         self.booksForAd[0].comment = bookComment
         self.booksForAd[0].condition = condition
+        self.booksForAd[0].email = email
         self.dataModel.SaveBookInfo(book: self.booksForAd[0])
         
-            images.forEach({ image in
-                self.saveImage(image: image, id: booksForAd[0].id)
-            })
+        images.forEach({ image in
+            self.saveImage(image: image, id: booksForAd[0].id)
+        })
         self.emptyArrays();
         self.GetBooksForSale()
     }
-                           
+    
     private func loadBook(searchTerm: String) {
-      books.removeAll()
+        books.removeAll()
         dataModel.getBookInfo(isbn: searchTerm) {book in
-              DispatchQueue.main.async {
-                  let isbnBookViewModel = ISBNBookViewModel(isbnData: book)
-                  self.books.append(isbnBookViewModel)
-              }
+            DispatchQueue.main.async {
+                let isbnBookViewModel = ISBNBookViewModel(isbnData: book)
+                self.books.append(isbnBookViewModel)
+            }
         }
     }
     public func saveImage(image: UIImage,id:String){
         dataModel.SaveImage(image: image, id: id)
-    }
-    public func deleteBook(id: String){
-        dataModel.deleteBook(id: id)
     }
 }
 

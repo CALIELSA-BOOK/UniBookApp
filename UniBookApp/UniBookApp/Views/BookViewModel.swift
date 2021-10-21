@@ -15,7 +15,7 @@ final class BookViewModel: ObservableObject {
         var name: String
         var authors: String
         var isbn: String
-        var bookCover: String // Change later
+        var bookCover: String
     }
     
     @Published var books = [Book(name: "Calculus", authors: "Pelle, Calle", isbn: "123456789", bookCover: "book.closed")]

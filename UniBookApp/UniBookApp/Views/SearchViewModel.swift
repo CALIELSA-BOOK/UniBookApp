@@ -31,6 +31,8 @@ class SearchViewModel: Identifiable, ObservableObject{
     
     public func emptyArray(){
         bookResult.removeAll()
+        dataModel.booksForSale.removeAll()
+        dataModel.GetBooksForSale()
     }
     
     public func findUserBooks(seller: String){
@@ -40,6 +42,14 @@ class SearchViewModel: Identifiable, ObservableObject{
         result.forEach({book in
             self.userBookResult.append(book)
         })
+    }
+    public func deleteBook(id: String, book: Book){
+        dataModel.deleteBook(id: id)
+        
+        if let index = userBookResult.firstIndex(of: book){
+            userBookResult.remove(at: index)
+        }
+        emptyArray()
     }
     
     public func findBooks(name: String){

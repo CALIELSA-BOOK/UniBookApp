@@ -13,7 +13,7 @@ struct UniBookAppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     init() {
-      FirebaseApp.configure()
+        FirebaseApp.configure()
     }
     
     var body: some Scene {
@@ -23,7 +23,7 @@ struct UniBookAppApp: App {
         let homeViewModel = HomeViewModel(model: dataModel)
         WindowGroup {
             ContentView(adViewModel: adViewModel, searchViewModel: searchViewModel, homeViewModel: homeViewModel)
-                    }
-                }
-            }
+        }
+    }
+}
 
