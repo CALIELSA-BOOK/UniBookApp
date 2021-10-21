@@ -13,7 +13,7 @@ struct HomeView: View {
     
     var body: some View {
         Group{
-            if homeViewModel.bookResult.count<1 {
+            if (homeViewModel.start == "start"){
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle(tint: .gray))
                     .scaleEffect(2)

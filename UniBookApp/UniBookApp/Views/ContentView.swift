@@ -27,10 +27,15 @@ struct ContentView: View {
                          
                      }.onAppear(perform:{
                          homeViewModel.getBooks()
-                         let seconds = 4.0
+                         if(homeViewModel.start=="start"){
+                         let seconds = 3.0
                          DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                          homeViewModel.getRandomBooks()
                          homeViewModel.filterUniqueBooks()
+                         }
+                         } else {
+                             homeViewModel.getRandomBooks()
+                             homeViewModel.filterUniqueBooks()
                          }
                      }).onDisappear(perform: {
                          homeViewModel.bookResult.removeAll()

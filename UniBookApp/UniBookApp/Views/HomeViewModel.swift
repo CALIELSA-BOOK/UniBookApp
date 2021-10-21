@@ -13,6 +13,7 @@ class HomeViewModel: ObservableObject{
     @ObservedObject private var dataModel: DataModel
     //@ObservedObject private var booksForSale: [Book] = []
     @Published public var bookResult: [Book] = []
+    @Published public var start: String = "start"
     @Published public var booksFiltered: [Book] = [] //all unique books
     private var disposables = Set<AnyCancellable>()
     
@@ -30,6 +31,7 @@ class HomeViewModel: ObservableObject{
         result.forEach({book in
             self.bookResult.append(book)
         })
+        self.start = ""
     }
     
     public func filterUniqueBooks(){
