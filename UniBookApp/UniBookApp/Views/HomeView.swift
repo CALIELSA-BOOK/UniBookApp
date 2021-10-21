@@ -12,6 +12,13 @@ struct HomeView: View {
     @State private var searchText = ""
     
     var body: some View {
+        Group{
+            if homeViewModel.bookResult.count<1 {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .gray))
+                    .scaleEffect(2)
+            }
+            else {
         GeometryReader{ geometry in
         VStack{
             ZStack{
@@ -52,6 +59,8 @@ struct HomeView: View {
             }
         }
         }
+            }
+    }
     }
 }
 

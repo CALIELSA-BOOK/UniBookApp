@@ -22,28 +22,23 @@ struct ContentView: View {
             VStack{
                 TabView {
                     NavigationView {
-                        if(!homeViewModel.bookResult.isEmpty){
-                            HomeView(homeViewModel: homeViewModel)
-                                .navigationBarTitle("Welcome")
-                        }
-                        else{
-                            ProgressView()
-                                .progressViewStyle(CircularProgressViewStyle(tint: .gray))
-                                .scaleEffect(2)
-                        }
-                    }.onAppear(perform:{
-                        if self.loadData == false{
-                            homeViewModel.getBooks()
-                            self.loadData = true
-                        }
-                        homeViewModel.getRandomBooks()
-                        homeViewModel.filterUniqueBooks()
-                    }).onDisappear(perform: {
-                        homeViewModel.bookResult.removeAll()
-                    })
-                        .tabItem {
-                            Label("Home", systemImage: "homekit")
-                        }
+                        HomeView(homeViewModel: homeViewModel)
+                                 .navigationBarTitle("Welcome")
+                         
+                     }.onAppear(perform:{
+                         homeViewModel.getBooks()
+                         let seconds = 4.0
+                         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                         homeViewModel.getRandomBooks()
+                         homeViewModel.filterUniqueBooks()
+                         }
+                     }).onDisappear(perform: {
+                         homeViewModel.bookResult.removeAll()
+                     })
+                         .tabItem {
+                             Label("Home", systemImage: "homekit")
+                         }
+                
                     NavigationView {
                         SearchView(searchViewModel: searchViewModel)
                             .navigationTitle("Search")
