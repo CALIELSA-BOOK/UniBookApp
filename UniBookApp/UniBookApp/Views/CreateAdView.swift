@@ -101,6 +101,9 @@ struct CreateAdView: View {
                             tempBook.imageURL = ""
                             tempBook.seller = UserDefaults.standard.string(forKey: "facebookID")!
                             searchViewModel.userBookResult.append(tempBook)
+                            price=""
+                            bookComment=""
+                            bookEmail=""
                         }
                         
                     })
