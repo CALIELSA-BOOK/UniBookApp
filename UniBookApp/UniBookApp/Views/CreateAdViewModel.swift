@@ -54,7 +54,7 @@ class CreateAdViewModel: Identifiable, ObservableObject{
         self.books.removeAll()
     }
     
-    public func CreateAd(price: String, bookComment: String, condition: String, email: String){
+    public func CreateAd(price: String, bookComment: String, condition: String, email: String, completion: @escaping (Book) -> Void) {
         self.booksForAd[0].price = price
         self.booksForAd[0].comment = bookComment
         self.booksForAd[0].condition = condition
@@ -64,8 +64,10 @@ class CreateAdViewModel: Identifiable, ObservableObject{
         images.forEach({ image in
             self.saveImage(image: image, id: booksForAd[0].id)
         })
+        completion(booksForAd[0])
         self.emptyArrays();
         self.GetBooksForSale()
+        
     }
     
     private func loadBook(searchTerm: String) {
