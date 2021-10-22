@@ -5,7 +5,7 @@
 //  Created by Sara Damne on 2021-09-21.
 //
 
-import SwiftUI 
+import SwiftUI
 
 struct ContentView: View {
     @AppStorage("logged") var logged = false
@@ -44,13 +44,13 @@ struct ContentView: View {
                     NavigationView {
                         SearchView(searchViewModel: searchViewModel, adViewModel: adViewModel)
                             .navigationTitle("Search")
-                    }.onDisappear(perform: {searchViewModel.emptyArray()})
+                    }.onDisappear(perform: {searchViewModel.bookResult.removeAll()})
                         .tabItem {
                             Label("Search", systemImage: "magnifyingglass")
                         }
                     NavigationView {
                         ScrollView {
-                            CreateAdView(adViewModel: adViewModel, isLoading: adViewModel.isLoading)
+                            CreateAdView(adViewModel: adViewModel, searchViewModel: searchViewModel, isLoading: adViewModel.isLoading)
                         }
                     }
                     .tabItem {
@@ -58,7 +58,8 @@ struct ContentView: View {
                     }
                     NavigationView {
                         ProfileView(searchViewModel: searchViewModel, adViewModel: adViewModel)
-                            .navigationTitle("Profile")
+                        .navigationTitle("Profile")
+                        
                     }
                     .tabItem {
                         Label("Profile", systemImage: "person.crop.circle")

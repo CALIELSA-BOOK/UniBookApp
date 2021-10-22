@@ -66,6 +66,8 @@ class SearchViewModel: Identifiable, ObservableObject{
             })
         }
     }
+    public func refreshBook(){
+        findUserBooks(seller: UserDefaults.standard.string(forKey: "facebookID")!)
+        
+    }
 }
-
-

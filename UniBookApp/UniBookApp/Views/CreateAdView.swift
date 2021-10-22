@@ -8,6 +8,7 @@ import SwiftUI
 
 struct CreateAdView: View {
     @ObservedObject var adViewModel: CreateAdViewModel
+    @ObservedObject var searchViewModel: SearchViewModel
     @State private var price: String = ""
     @State private var bookComment: String = ""
     @State private var bookEmail: String = ""
@@ -95,7 +96,13 @@ struct CreateAdView: View {
                     .background(Color(red: 25/255, green: 85/255, blue: 166/255))
                     .cornerRadius(16)
                     .simultaneousGesture(TapGesture().onEnded{ isSaved = true
-                        adViewModel.CreateAd(price: price, bookComment: bookComment, condition: arrayOfConditions[selection], email: bookEmail)
+                        adViewModel.CreateAd(price: price, bookComment: bookComment, condition: arrayOfConditions[selection], email: bookEmail){book in
+                            var tempBook = book
+                            tempBook.imageURL = ""
+                            tempBook.seller = UserDefaults.standard.string(forKey: "facebookID")!
+                            searchViewModel.userBookResult.append(tempBook)
+                        }
+                        
                     })
                 
             }

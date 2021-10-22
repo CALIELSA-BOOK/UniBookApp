@@ -10,6 +10,7 @@ import SwiftUI
 struct MyAdsView: View {
     @ObservedObject var searchViewModel: SearchViewModel
     
+    
     var body: some View {
         GeometryReader{ geometry in
             VStack{
@@ -22,18 +23,27 @@ struct MyAdsView: View {
                     EmptyStateView()
                 }
                 else{
-                    ScrollView(.vertical){
-                        VStack(spacing: 25){
-                            
-                            ForEach(searchViewModel.userBookResult, id: \.self) {book in
-                                NavigationLink(destination: DisplayMyAdView(searchViewModel:searchViewModel, book: book)){
-                                    BookItemView(booktitle: book.name, bookauthor: book.authors, bookISBN: book.isbn, bookPrice: book.price!).padding(.bottom,geometry.size.height * 0.10)
-                                    Spacer()
-                                    
-                                }.buttonStyle(PlainButtonStyle())
-                            }
-                            
-                        }
+                    
+                    if #available(iOS 15.0, *) {
+                        List(searchViewModel.userBookResult) { book in
+                            NavigationLink(destination: DisplayMyAdView(searchViewModel:searchViewModel, book: book)){
+                                Image(systemName: "book.closed") //image
+                                    .renderingMode(.original)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: geometry.size.width * 0.1)
+                                VStack(alignment: .leading){
+                                    Text(book.name)
+                                    //Text(book.authors)
+                                }
+                                
+                                
+                            }.padding(.bottom,geometry.size.height * 0.01).buttonStyle(PlainButtonStyle())
+                        }.refreshable(action:{
+                            searchViewModel.refreshBook()
+                        })
+                    } else {
+                        // Fallback on earlier versions
                     }
                 }
             }.navigationTitle("My ads")
