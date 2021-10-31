@@ -43,7 +43,7 @@ struct MyAdsView: View {
                             searchViewModel.refreshBook()
                         })
                     } else {
-                        // Fallback on earlier versions
+                    
                     }
                 }
             }.navigationTitle("My ads")
