@@ -58,7 +58,7 @@ struct ImageUploadView: View {
             }
         }
         .sheet(isPresented: $isShowPhotoLibrary) {
-            ImagePicker(adViewModel:adViewModel, sourceType: .photoLibrary, selectedImage: self.$image)
+            ImagePicker(adViewModel:adViewModel, sourceType: .camera, selectedImage: self.$image)
         }
     }
 }

@@ -47,7 +47,7 @@ struct HomeView: View {
                                 ForEach (homeViewModel.bookResult, id: \.self){
                                     book in
                                     NavigationLink(destination: DisplayAdView(book: book)){
-                                        BookItemView(booktitle: book.name, bookauthor: book.authors, bookISBN: book.isbn, bookPrice: book.price!).padding(.bottom,geometry.size.height * 0.10)
+                                        BookItemView(booktitle: book.name, bookauthor: book.authors, bookISBN: book.isbn, bookPrice: book.price!).padding(.bottom,geometry.size.height * 0.12)
                                         Spacer()
                                         
                                     }.buttonStyle(PlainButtonStyle())

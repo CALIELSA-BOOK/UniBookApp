@@ -8,7 +8,7 @@
 import SwiftUI
 import SDWebImageSwiftUI
 struct DisplayAdView: View {
-    
+    @State var copied = ""
     var book: Book
     var body: some View {
         if !book.id.isEmpty{
@@ -26,6 +26,14 @@ struct DisplayAdView: View {
                     Text("Comment: " + book.comment!)
                         .font(.system(size: 16, weight: .light, design: .default))
                 }
+                VStack{
+                    Text("Email: " + book.email!)
+                        .font(.system(size: 16, weight: .light, design: .default))
+                }
+                VStack{
+                    Text(copied)
+                        .font(.system(size: 16, weight: .light, design: .default))
+                }
                 if book.imageURL == ""{
                     Image(systemName: "photo").renderingMode(.original).resizable().aspectRatio(contentMode: .fit).frame(width: 120, height: 120)
                 }
@@ -35,12 +43,11 @@ struct DisplayAdView: View {
                     }.indicator(.activity).transition(.fade(duration: 0.3)).scaledToFit().frame(width:UIScreen.main.bounds.width/2, alignment: .center)
                 }
                 Spacer()
-                Button("Contact Seller"){
-                    if let url = URL(string: "mailto:\(book.email!)?subject=UniBookApp%20"+book.name+"%20&body=I%20would%20like%20to%20buy%20your%20book")
-                    {
-                        UIApplication.shared.open(url)
-                    }
-                    
+                Button("Copy email"){
+                
+                    copied = "Email copied to clipboard!"
+                        UIPasteboard.general.string = book.email
+                
                 }.foregroundColor(.white).padding(.all).frame(width: 250, height: 50).background(Color(red: 25/255, green: 85/255, blue: 166/255)).cornerRadius(16)
             }
             
@@ -55,6 +62,7 @@ struct DisplayAdView: View {
 
 struct DisplayMyAdView: View {
     @ObservedObject var searchViewModel: SearchViewModel
+    @State var copied = ""
     var book: Book
     var body: some View {
         if !book.id.isEmpty{
@@ -70,6 +78,15 @@ struct DisplayMyAdView: View {
                 }
                 VStack{
                     Text("Comment: " + book.comment!)
+                        .font(.system(size: 16, weight: .light, design: .default))
+                }
+                VStack{
+                    Text("Email: " + book.email!)
+                        .font(.system(size: 16, weight: .light, design: .default))
+                }
+                
+                VStack{
+                    Text(copied)
                         .font(.system(size: 16, weight: .light, design: .default))
                 }
                 if book.imageURL == ""{
@@ -87,13 +104,13 @@ struct DisplayMyAdView: View {
                         
                     }.foregroundColor(.white).padding(.all).frame(width: 250, height: 50).background(Color(red: 255/255, green: 1/255, blue: 1/255)).cornerRadius(16)
                 }
-                Button("Contact Seller"){
-                    if let url = URL(string: "mailto:\(book.seller!)?subject=UniBookApp%20"+book.name+"%20&body=I%20would%20like%20to%20buy%20your%20book")
-                    {
-                        UIApplication.shared.open(url)
-                    }
+               
+                    Button("Copy email"){
                     
-                }.foregroundColor(.white).padding(.all).frame(width: 250, height: 50).background(Color(red: 25/255, green: 85/255, blue: 166/255)).cornerRadius(16)
+                        copied = "Email copied to clipboard!"
+                            UIPasteboard.general.string = book.email
+                    
+                    }.foregroundColor(.white).padding(.all).frame(width: 250, height: 50).background(Color(red: 25/255, green: 85/255, blue: 166/255)).cornerRadius(16)
             }
             
         }

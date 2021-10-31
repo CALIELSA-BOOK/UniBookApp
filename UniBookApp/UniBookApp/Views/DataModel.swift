@@ -30,6 +30,8 @@ class DataModel: ObservableObject {
     @Published var isLoading = LoadingStatus()
     
     func findBooks(name: String) -> [Book]{
+        booksForSale.removeAll()
+        self.GetBooksForSale()
         let filtered = booksForSale.filter { Book in
             return Book.name.contains(name)
         }
@@ -89,13 +91,14 @@ class DataModel: ObservableObject {
                 
                 return
             }
-            storage.child("images/file.jpg").downloadURL(completion: {url, error in
+            storage.child("images/\(imageID.uuidString).jpg").downloadURL(completion: {url, error in
                 guard let url = url, error == nil else {
                     return
                 }
                 let urlString = url.absoluteString
                 self.messageRefBooks.child(id).child("imageURL").setValue(urlString)
-                
+                self.booksForSale.removeAll()
+                self.GetBooksForSale();
             })
         }
     }
